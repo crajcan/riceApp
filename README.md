@@ -1,24 +1,30 @@
-# README
+# This app is 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To install this app get Rails 5.1.2 and Ruby ruby 2.3.0p0. 
 
-Things you may want to cover:
+To get started with the app, clone the repo and then install the needed gems: 
 
-* Ruby version
+```
+$ bundle install --without production
 
-* System dependencies
+```
 
-* Configuration
+Next, migrate the database:
 
-* Database creation
+```
+$ rails db:migrate
+```
 
-* Database initialization
+Finally, run the test suite to verify that everything is working correctly:
 
-* How to run the test suite
+```
+$ rails test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+If the test suite passes, you'll be ready to run the app in a local server:
 
-* Deployment instructions
+```
+$ rails server
+```
 
-* ...
+
