@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/contact'
-  get 'static_pages/home'
-  get 'static_pages/help'
-  get 'static_pages/about'
-  root 'application#home'
-
-  get '/signin', :to => 'application#login'
+  root 'application#home'   
+  get  '/contact', :to =>   'static_pages#contact'
+  get  '/help', :to =>      'static_pages#help'
+  get  '/about', :to =>     'static_pages#about'
+  get  '/login',:to =>     'application#login'
 
 end
