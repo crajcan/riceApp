@@ -257,6 +257,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug (= 9.0.6)
+  capybara
   coffee-rails (= 4.2.2)
   cucumber-rails
   database_cleaner

@@ -1,40 +1,41 @@
+require 'cucumber'
+
 Given /^Nothing$/ do
-  #yep
+  nil
 end  
-
-When /^I navigate to the home page$/ do
-  visit '/static_pages/home'
-end  
-
-Then /^I am on the home page$/ do
-  current_path.should == static_pages_home_url
-end
 
 When I /^navigate to the help page$/ do
-  visit '/static_pages/help'
-end
-
-Then /^I am on the help page$/ do 
-  current_path.should == static_pages_help_url
+  visit '/help'
 end
 
 When I /^navigate to the about page$/ do
-  visit '/static_pages/about'
+  visit '/about'
 end
 
-Then /^I am on the about page$/ do
-  current_page.should == static_pages_about_url
+When I /^navigate to the contact page$/ do
+  visit '/contact'
 end
 
-Then /^The title says home$/ do
-  
+Then /^I am on the help page$/ do
+  current_page.should == help_url
+end
+
+TThen /^I am on the about page$/ do
+  current_page.should == about_url
+end
+
+hen /^I am on the contact page$/ do
+  current_page.should == contact_url
 end
 
 Then /^The title says help$/ do
-
+  page.title.include? "Help"  
 end
 
 Then /^The title says about$/ do
-
+  page.title.include? "About"  
 end
 
+Then /^The title says contact$/ do
+  page.title.include? "Contact"  
+end
