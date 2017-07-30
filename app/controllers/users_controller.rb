@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def create
@@ -8,10 +9,12 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url
     else
-      @user.errors.details.each do |error|
-        Rails.logger.info "ERRROR = #{error}"
-      end
+      render 'new' 
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private 
