@@ -1,0 +1,18 @@
+=content_for(:title, "Sign up")
+!!! 5
+%html
+  %body 
+    %h1= "Sign Up"
+    = form_for(:user, url: signup_url) do |f| 
+
+      = f.label :name
+      = f.text_field :name
+
+      = f.label :email 
+      = f.email_field :email
+
+      = f.label :password 
+      = f.password_field :password
+
+      = f.submit "Log in", class: "btn btn-primary"
+ 
