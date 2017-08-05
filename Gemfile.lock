@@ -75,6 +75,7 @@ GEM
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    google-webfonts-rails (0.0.1)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -243,6 +244,7 @@ DEPENDENCIES
   capybara
   coffee-rails (= 4.2.2)
   database_cleaner
+  google-webfonts-rails
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   haml

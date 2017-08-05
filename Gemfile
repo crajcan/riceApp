@@ -12,6 +12,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'capybara'
 gem 'haml'
 gem 'bootstrap-sass'
+gem 'google-webfonts-rails', '~> 0.0.4'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

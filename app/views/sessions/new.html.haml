@@ -1,15 +1,12 @@
 =content_for(:title, "Login")
-!!! 5
-%html
-  %body 
-    %h1= "Login"
-    = form_for(:session, url: login_url) do |f|
+  %h1= "Login"
+  = form_for(:session, url: login_url) do |f|
 
-      = f.label :email 
-      = f.email_field :email
+    = f.label :email 
+    = f.email_field :email
 
-      = f.label :password 
-      = f.password_field :password
+    = f.label :password 
+    = f.password_field :password
 
-      = f.submit "Log in", class: "btn btn-primary"
-    %p New user? #{link_to "Sign up here", signup_path} 
+    = f.submit "Log in", class: "btn btn-primary"
+  %p New user? #{link_to "Sign up here", signup_path} 
