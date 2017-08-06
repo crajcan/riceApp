@@ -1,5 +1,6 @@
 =content_for(:title, "Login")
-  %h1= "Login"
+.mat-card
+  %h3= "Login"
   = form_for(:session, url: login_url) do |f|
 
     = f.label :email 

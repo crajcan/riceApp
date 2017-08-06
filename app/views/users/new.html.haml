@@ -1,4 +1,5 @@
 =content_for(:title, "Sign up")
+.mat-card
   %h1= "Sign Up"
   = form_for(@user, url: signup_url) do |f| 
     = render 'shared/error_messages'

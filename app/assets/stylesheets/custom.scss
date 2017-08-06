@@ -15,6 +15,7 @@ h3{
 }
 
 body{
+  background-color: #f1f1f1;
   margin: 0;
   left: 0;
   top: 0;
@@ -23,17 +24,17 @@ body{
 }
  
 .mat-card{
-  background: #e3e4e8;
+  background: white;
   margin: 10px 10px 0px 10px;
-  border: 1px solid black; 
-  border-bottom: 2px solid black;
+  border: 1px solid  #dadada; 
+  border-bottom: 2px solid #dadada;
   padding: 10px;
 }
 
 
 header {
   padding: 8px;
-  background-color: #3B653D;
+  background-color: #003399;
 }
 
 /* footer */
@@ -44,8 +45,9 @@ footer {
   padding-top: 5px;
   padding-left: 8px;
   padding-right: 8px;
-  border-top: 1px solid #eaeaea;
-  color: #fff;
+  background: #1f1f2e;
+  color: #ffffff;
+  
 }
 
 footer, header{  

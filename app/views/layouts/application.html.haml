@@ -3,13 +3,13 @@
   %head
     %title= "Pivot | " << yield(:title)
     %meta{ :content => 'width=device-width, initial-scale=1', :name => 'viewport' }
-    = google_webfonts_init( { google: ['Roboto'] } )
+    %link{ :href => 'https://fonts.googleapis.com/css?family=Roboto', :rel => 'stylesheet' } 
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     :css
       body {
-        background-image: url(#{asset_path 'least.jpg'});
+        font-family: 'Roboto';
       } 
   %body
     =render 'layouts/header'
