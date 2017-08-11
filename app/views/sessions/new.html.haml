@@ -2,12 +2,13 @@
 .mat-card
   %h3= "Login"
   = form_for(:session, url: login_url) do |f|
+    = render 'shared/error_messages'
 
-    = f.label :email 
+    = f.label :email, for: "something", id: "email" 
     = f.email_field :email
 
     = f.label :password 
     = f.password_field :password
 
-    = f.submit "Log in", class: "btn btn-primary"
+    = f.submit "Log in" 
   %p New user? #{link_to "Sign up here", signup_path} 

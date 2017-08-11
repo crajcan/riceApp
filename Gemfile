@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',        '5.1.2'
+gem 'rails',        '5.1.3'
 gem 'bcrypt',       '3.1.11'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
@@ -12,7 +12,6 @@ gem 'jbuilder',     '2.7.0'
 gem 'capybara'
 gem 'haml'
 gem 'bootstrap-sass'
-gem 'google-webfonts-rails', '~> 0.0.4'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

@@ -1,5 +1,5 @@
 %header
-  .container
-    =link_to "Pivot", root_path, :id => "logo"
-    %ul
-      %li= logged_in? ? (link_to "Log out", logout_url, :method => :delete) : (link_to "Log in", login_url) 
+  =link_to "Pivot", root_path, :id => "logo"
+  %ul
+    %li= logged_in? ? (link_to "Log out", logout_url, :method => :delete) : (link_to "Log in", login_url) 
+    %li= link_to "Home",   home_url
