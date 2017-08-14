@@ -4,7 +4,7 @@
   = form_for(:session, url: login_url) do |f|
 
     = f.label :email, for: "something", id: "email" 
-    = f.email_field :email
+    = f.email_field :email, autofocus: true
 
     = f.label :password 
     = f.password_field :password
