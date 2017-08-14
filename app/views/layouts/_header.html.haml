@@ -1,8 +1,11 @@
 %header
   =link_to "Pivot", root_path, :id => "logo"
   %ul
-    %li= logged_in? ? (link_to "Log Out", logout_url, :method => :delete) : (link_to "Log in", login_url) 
-    - if (!logged_in?)
-      %li 
-        = (link_to "Sing Up", signup_url)
+    -if logged_in? 
+      %li= link_to "Profile",  current_user
+      %li= link_to "Log Out", logout_path, :method => :delete
+    -else
+      %li
+        = (link_to "Log in", login_url) 
+        = (link_to "Sign Up", signup_url)
     %li= link_to "Home",   home_url
