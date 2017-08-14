@@ -37,7 +37,7 @@ body{
 
 header {
   padding: 8px;
-  background-color: #0062b5;//46b3ea;//003399;
+  background-color: #0062b5;
   ul li {
     display: inline;
     padding-left: 5px;
@@ -77,6 +77,8 @@ footer, header{
   }
 }
 
+
+
 form {
   padding: 0px 30px 0px 30px;
   margin-bottom: 20px;
@@ -106,4 +108,8 @@ form {
   }
 }
 
-
+@media only screen and (max-width: 480px){
+  form{
+    padding: 0px;
+  }
+}
