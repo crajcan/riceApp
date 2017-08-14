@@ -6,6 +6,6 @@
       %li= link_to "Log Out", logout_path, :method => :delete
     -else
       %li
-        = (link_to "Log in", login_url) 
-        = (link_to "Sign Up", signup_url)
+        = (link_to "Log in", login_path) 
+        = (link_to "Sign Up", signup_path)
     %li= link_to "Home",   home_url
