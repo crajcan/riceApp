@@ -135,8 +135,11 @@ form {
       border-radius: 2px;
     }
     input[type=checkbox]:checked{
-      background-color: #85beff;
+      background-color: red;//#85beff;
     }
+    input[type=checkbox]:focus{
+        outline-width: 0;
+      }
     span{
     }  
   }
@@ -156,6 +159,4 @@ form {
     margin: 10px auto auto auto;
   }
 }
-
-
 
