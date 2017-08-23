@@ -1,11 +1,11 @@
 %header
-  =link_to "Pivot", root_path, :id => "logo"
-  %ul
+  #logo= link_to "Pivot", root_path, :id => "logo"
+  .hamburger ☰
+  %ul#nav-hidden
     -if logged_in? 
       %li= link_to "Profile",  current_user
       %li= link_to "Log Out", logout_path, :method => :delete
     -else
-      %li
-        = (link_to "Log in", login_path) 
-        = (link_to "Sign Up", signup_path)
+      %li= (link_to "Log in", login_path) 
+      %li= (link_to "Sign Up", signup_path)
     %li= link_to "Home",   home_url

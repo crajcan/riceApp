@@ -1,8 +1,11 @@
-/* #logo {
-  padding-top: 9px;
-  color: #808080;
-} */
-/* header */
+#logo {
+  //padding-top: 9px;
+  color: white; 
+  text-decoration: none;
+  display: inline;
+} 
+
+
 
 h3{
   margin-top: 0;
@@ -13,6 +16,7 @@ h1 {
 }
 
 body{
+  margin-top: 100px;
   background-color: #f1f1f1;
   margin: 0;
   left: 0;
@@ -21,7 +25,9 @@ body{
   width: 100%;
 }
  
-.mat-card{
+.mat-card{ 
+  position: relative;
+  z-index: 1;
   margin: 10px 10px auto 10px;
   max-width: 768px;
   align: center;
@@ -34,15 +40,33 @@ body{
   }
 }
 
+/* header */
+
+.push{
+  margin-bottom: 60px;
+}
 
 header {
-  padding: 8px;
+  z-index: 2;
+  width: 100%;
+  position: fixed;
+  padding: 8px 8px 8px 8px;
   background-color: #0062b5;
-  ul li {
-    display: inline;
-    padding-left: 5px;
+  ul{
+    margin-top: 10px;
   }
+  //ul {
+  //  margin: 0;
+  //  float: right;
+  //  list-style: none;
+  //}
 }
+
+.open{
+  padding: 8px 8px 12px 8px;
+}
+
+
 
 /* footer */
 
@@ -54,11 +78,7 @@ footer {
   padding-right: 8px;
   background: #1f1f2e;
   color: #ffffff;  
-}
-
-footer, header{  
-  overflow: hidden;
- 
+  overflow: hidden; 
   a {
     margin-right: 5px;
     color: #ffffff;
@@ -77,6 +97,43 @@ footer, header{
   }
 }
 
+.hamburger{
+  color: white;
+  margin-right: 20px;
+  float: right;
+  width: 25px;
+  height: 22px;
+  line-height: 22px;
+  border: 2px solid white;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#nav-hidden{
+  top: 30px;
+  left: 30px;
+  margin-top: 10px;
+  display: none;
+  float: right;
+  position: relative;
+  list-style: none;
+  z-index: 4;
+  a {
+    margin-right: 5px;
+    color: white;
+    text-decoration: none;
+  }
+  li {
+    height: 30px;
+  } 
+  a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+}
 
 
 form {
