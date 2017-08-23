@@ -1,10 +1,3 @@
-/*$(document).ready(function(){
-  $('.hamburger').click(function() {
-     $('.hamburger').not(this).find('#nav-hidden').hide();
-     $(this).find('#nav-hidden').toggle();
-  });
-});*/
-
 $(document).on('turbolinks:load',function(){
 
   $(".hamburger").click(function(){
@@ -12,9 +5,25 @@ $(document).on('turbolinks:load',function(){
     $("header").toggleClass('open')
   });
 
-  $('body').click(function(){
-    $("#nav-hidden").css('display: none;')
+
+  $(document).click(function(){
+    $("#nav-hidden").hide();
+    $("header").removeClass('open');
   });
 
+  $("header").click(function(e){
+    e.stopPropagation();
+  });
+
+/*
+  $('body').click(function(e){
+    if($(e.target).hasClass("open")){
+      return false;
+    } else {
+      $("#nav-hidden").toggle();
+      $("header").toggleClass('open');
+    }
+  });
+*/
 });
 

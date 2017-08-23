@@ -40,6 +40,7 @@ body{
   }
 }
 
+
 /* header */
 
 .push{
@@ -54,6 +55,8 @@ header {
   background-color: #0062b5;
   ul{
     margin-top: 10px;
+    padding-left: 0;
+    //width: 100%;
   }
   //ul {
   //  margin: 0;
@@ -64,37 +67,6 @@ header {
 
 .open{
   padding: 8px 8px 12px 8px;
-}
-
-
-
-/* footer */
-
-footer {
-  height: 500px;
-  margin-top: 45px;
-  padding-top: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
-  background: #1f1f2e;
-  color: #ffffff;  
-  overflow: hidden; 
-  a {
-    margin-right: 5px;
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-  
-  ul {
-    margin: 0;
-    float: right;
-    list-style: none;
-  }
 }
 
 .hamburger{
@@ -135,6 +107,35 @@ footer {
   
 }
 
+
+/* footer */
+
+footer {
+  height: 500px;
+  margin-top: 45px;
+  padding-top: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background: #1f1f2e;
+  color: #ffffff;  
+  overflow: hidden; 
+  a {
+    margin-right: 5px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  ul {
+    margin: 0;
+    float: right;
+    list-style: none;
+  }
+}
 
 form {
   padding: 0px 30px 0px 30px;
