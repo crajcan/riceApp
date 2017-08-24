@@ -251,9 +251,11 @@ form {
   }
 }
 
-//.on-device{
-//  cursor: pointer;
-//}
+.on-device{
+  body{
+    cursor: pointer;
+  }
+}
 
 
 /* Debug */
