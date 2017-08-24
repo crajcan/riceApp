@@ -1,7 +1,6 @@
 html{
-  font-size: 100%;
+  font-size: 24px;
 }
-
 
 .noselect {
   -webkit-touch-callout: none;//iOS Safari
@@ -10,10 +9,6 @@ html{
        -moz-user-select: none;
         -ms-user-select: none;//IE
             user-select: none;//Chrome and Opera
-}
-
-.clickable{
-  cursor: pointer;
 }
 
 h3{
@@ -46,6 +41,9 @@ body{
   box-shadow: 0 1px 3px 0 #a4a4a4;
   ul {
     margin-bottom: 20px;
+  }
+  p {
+    font-size: 0.66em;
   }
 }
 
@@ -88,7 +86,7 @@ header {
     border: 2px solid white;
     border-radius: 2px;
     text-align: center;
-    font-size: 24px;
+    font-size: 16px;
     cursor: pointer;
   }
   #nav-hidden{
@@ -98,6 +96,7 @@ header {
     position: relative;
     list-style: none;
     z-index: 4;
+    font-size: .66em;
     a {
       margin-top: 5px;
       margin-right: 10px;
@@ -141,8 +140,10 @@ footer {
   padding-right: 8px;
   background: #1f1f2e;
   color: #ffffff;  
-  overflow: hidden; 
+  overflow: hidden;
+  font-size: .66em; 
   a {
+    font-size: 1em;
     margin-right: 5px;
     color: #ffffff;
     text-decoration: none;
@@ -174,7 +175,7 @@ form {
   input[type=submit],
   input[type=text]{
     textarea{
-      font-size: 16px;
+      font-size: 8px;
     }
     -webkit-appearance: none; 
     box-sizing: border-box;
@@ -226,6 +227,9 @@ form {
   }
 }
 
+/* mobile */
+
+
 @media only screen and (max-width: 480px){
   form{
     padding: 0px;
@@ -241,3 +245,12 @@ form {
   }
 }
 
+
+.mobile-clickable{
+  cursor: auto;
+}
+
+pre{
+  font-size: .66em;
+  overflow: none;
+}
