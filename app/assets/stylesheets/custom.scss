@@ -237,17 +237,15 @@ form {
   .mat-card{
     margin: 10px auto auto auto;
   }
+  .mobile-clickable{
+    cursor: pointer;
+  }
 }
 
 @media only screen and (min-width: 768px){
   .mat-card{
     margin: 10px auto auto auto;
   }
-}
-
-
-.mobile-clickable{
-  cursor: auto;
 }
 
 pre{

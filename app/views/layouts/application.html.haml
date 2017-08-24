@@ -15,7 +15,10 @@
     =render 'layouts/header'
     .push
     - flash.each do |message_type, message| 
-      .alert{ :class => "alert-#{message_type}"}= message
-    = yield 
-    .mat-card= debug(params) if Rails.env.development? 
-    = render 'layouts/footer'   
+      .alert{ :class => "alert-#{message_type}"}=message
+    =yield 
+
+    -if Rails.env.development? 
+      .mat-card 
+        =debug(params)
+    =render 'layouts/footer'   
