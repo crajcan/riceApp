@@ -1,11 +1,12 @@
-#logo {
-  //padding-top: 9px;
-  color: white; 
-  text-decoration: none;
-  display: inline;
-} 
 
-
+.noselect {
+  -webkit-touch-callout: none;//iOS Safari
+    -webkit-user-select: none;//Safari
+     -khtml-user-select: none;//Konqueror HTML
+       -moz-user-select: none;
+        -ms-user-select: none;//IE
+            user-select: none;//Chrome and Opera
+}
 
 h3{
   margin-top: 0;
@@ -51,60 +52,74 @@ header {
   z-index: 2;
   width: 100%;
   position: fixed;
-  padding: 8px 8px 8px 8px;
+  padding: 8px 0px 8px 0px;
   background-color: #0062b5;
+  #logo {
+    //padding-top: 9px;
+    font-size: 18px;
+    color: white; 
+    text-decoration: none;
+    display: inline;
+    margin-left: 8px;
+  } 
   ul{
-    margin-top: 10px;
+    top: 0;
+    margin: 0; 
     padding-left: 0;
-    //width: 100%;
+    width: 100%;
+    text-align: left;
+    float: right
   }
-  //ul {
-  //  margin: 0;
-  //  float: right;
-  //  list-style: none;
-  //}
+  .hamburger{
+    color: white;
+    margin-right: 10px;
+    float: right;
+    width: 25px;
+    height: 22px;
+    line-height: 22px;
+    border: 2px solid white;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  #nav-hidden{
+    margin-top: 7px;
+    display: none;
+    float: right;
+    position: relative;
+    list-style: none;
+    z-index: 4;
+    a {
+      margin-top: 5px;
+      margin-right: 10px;
+      color: white;
+      text-decoration: none;
+      float: right;
+    } 
+    a:hover {
+      text-decoration: underline;
+    }
+    li {
+      width: 100%;
+      height: 30px;
+    }
+    li:hover{
+      background-color: white;
+      a{
+        color: #0062b5;
+      }
+    }
+  }
 }
 
 .open{
-  padding: 8px 8px 12px 8px;
-}
-
-.hamburger{
-  color: white;
-  margin-right: 20px;
-  float: right;
-  width: 25px;
-  height: 22px;
-  line-height: 22px;
-  border: 2px solid white;
-  border-radius: 2px;
-  text-align: center;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-#nav-hidden{
-  top: 30px;
-  left: 30px;
-  margin-top: 10px;
-  display: none;
-  float: right;
-  position: relative;
-  list-style: none;
-  z-index: 4;
-  a {
-    margin-right: 5px;
-    color: white;
-    text-decoration: none;
+  padding: 8px 0px 0px 0px;
+  .hamburger{ 
+    color: #0062b5; 
+    border: 2px solid #0062b5;
+    background-color: white;
   }
-  li {
-    height: 30px;
-  } 
-  a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-  
 }
 
 

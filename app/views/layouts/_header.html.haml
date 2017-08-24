@@ -1,6 +1,6 @@
 %header
-  #logo= link_to "Pivot", root_path, :id => "logo"
-  .hamburger ☰
+  =link_to "Pivot", root_path, :id => "logo"
+  .hamburger.noselect ☰
   %ul#nav-hidden
     -if logged_in? 
       %li= link_to "Profile",  current_user
