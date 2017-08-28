@@ -3,9 +3,24 @@
   .hamburger.noselect ☰
   %ul#nav-hidden
     -if logged_in? 
-      %li= link_to "Profile",  current_user
-      %li= link_to "Log Out", logout_path, :method => :delete
+      %li
+        %a{:href => user_path(current_user)}
+          .float-right
+            Profile
+      %li
+        %a{:href => logout_path, :method => :delete}
+          .float-right
+            Log Out
     -else
-      %li= (link_to "Log in", login_path) 
-      %li= (link_to "Sign Up", signup_path)
-    %li= link_to "Home",   home_url
+      %li
+        %a{:href => "/login"}
+          .float-right
+            Log in
+      %li
+        %a{:href => "/signup"}
+          .float-right
+            Sign Up
+    %li
+      %a{:href => "/home"}
+        .float-right
+          Home

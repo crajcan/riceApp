@@ -13,16 +13,22 @@ $(document).on('turbolinks:load',function(){
       $("header").removeClass('open');
     });
 
+    $(".float-right").click(function(e){
+      e.stopPropagation();
+    });
+
 
     $("header").click(function(e){
       e.stopPropagation();
     });
 
-    $("header").find("#nav-hidden").click(function(e){
-      e.stopPropagation();
-      $(this).find("a").first().click();
+    $("#nav-hidden").children().click(function(){
+      console.log("in control")
+      //console.log(`elements = ${document.getElementsByTagName("A")}`);
+      //elements = ${document.getElementsByTagName("A")}
+      //().getElementsByTagName('a')[0].trigger('click')
     });
-
+    
   });
 
 });
