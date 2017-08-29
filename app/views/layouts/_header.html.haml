@@ -5,20 +5,16 @@
     -if logged_in? 
       %li
         %a{:href => user_path(current_user)}
-          .float-right
-            Profile
+          Profile
       %li
-        =link_to "Log out", logout_url, :method => "delete", class: "float-right"
+        =link_to "Log out", logout_url, :method => "delete"
     -else
       %li
         %a{:href => "/login"}
-          .float-right
-            Log in
+          Log in
       %li
         %a{:href => "/signup"}
-          .float-right
-            Sign Up
+          Sign Up
     %li
       %a{:href => "/home"}
-        .float-right
-          Home
+        Home
