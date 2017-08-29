@@ -2,10 +2,10 @@
 $(document).on('turbolinks:load',function(){
 
   
-  $(".hamburger").click(function(){
+  $(".hamburger").click(function(e){
     $("#nav-hidden").toggle();
     $("header").toggleClass('open')
-
+    e.stopPropagation();
   
     //after burger click, close if outside click
     $('html').click(function(){
@@ -13,22 +13,6 @@ $(document).on('turbolinks:load',function(){
       $("header").removeClass('open');
     });
 
-    $(".float-right").click(function(e){
-      e.stopPropagation();
-    });
-
-
-    $("header").click(function(e){
-      e.stopPropagation();
-    });
-
-    $("#nav-hidden").children().click(function(){
-      console.log("in control")
-      //console.log(`elements = ${document.getElementsByTagName("A")}`);
-      //elements = ${document.getElementsByTagName("A")}
-      //().getElementsByTagName('a')[0].trigger('click')
-    });
-    
   });
 
 });
