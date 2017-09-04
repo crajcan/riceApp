@@ -4,11 +4,13 @@
   %ul#nav-hidden
     -if logged_in? 
       %li
+        =link_to "Home", "/home"
+      %li
         =link_to "Profile", user_path(current_user)
       %li
-        =link_to "Log out", logout_url, :method => "delete"
+        =link_to "Edit profile", edit_user_path(current_user) 
       %li
-        =link_to "Home", "/home"
+        =link_to "Log out", logout_url, :method => "delete"
     -else
       %li
         =link_to "Log in", "/login"

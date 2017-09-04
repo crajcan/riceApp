@@ -1,7 +1,7 @@
 =content_for(:title, "Sign up")
 .mat-card
   %h3= "Sign-up"
-  = form_for(@user, url: signup_url) do |f| 
+  = form_for(@user) do |f| 
     = render 'shared/error_messages'
 
     = f.label :name

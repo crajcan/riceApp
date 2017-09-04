@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+  def index
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -15,8 +22,22 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def edit
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.password_required = false
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile edited succesfully" 
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
   end
 
   private 

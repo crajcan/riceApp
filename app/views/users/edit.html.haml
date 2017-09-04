@@ -1,0 +1,13 @@
+=content_for(:title, "Edit your profile")
+.mat-card
+  %h3 Edit your profile
+  = form_for(@user) do |f|
+    = render 'shared/error_messages'
+    
+    = f.label :name
+    = f.text_field :name, :class => 'form-control', autofocus: true
+    
+    = f.label :email
+    = f.email_field :email, :class => 'form-control'
+
+    = f.submit "Save Changes"

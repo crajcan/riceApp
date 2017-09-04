@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :password_required
   
   before_save { self.email = email.downcase }
-  validates :password, presence: true, length: { minimum: 6, maximum: 25 }
+  validates :password, presence: true, length: { minimum: 6, maximum: 25 }, :if => :password_required
   validates :name, presence: true, length: { maximum: 25 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates(:email, presence: true, 
@@ -36,4 +36,10 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  private
+=begin
+    def password_required?
+      action_name != 'edit' 
+    end
+=end
 end
