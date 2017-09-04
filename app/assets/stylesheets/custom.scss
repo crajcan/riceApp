@@ -17,6 +17,8 @@ h1,h2,h3,h4,h5,h6 {
   margin-top: 0; 
 }
 
+
+
 body{
   margin-top: 100px;
   background-color: $body;
@@ -27,7 +29,7 @@ body{
   width: 100%;
 }
  
-.mat-card{ 
+@mixin mat-card-mixin{ 
   position: relative;
   z-index: 1;
   margin: 10px 10px auto 10px;
@@ -49,6 +51,15 @@ body{
     margin-top: 0px;
     font-size: 0.66em;
   }
+}
+
+.mat-card{
+  @include mat-card-mixin;
+}
+
+.alert{
+  @include mat-card-mixin;
+  text-align: center;
 }
 
 
@@ -241,7 +252,7 @@ form {
 
 
 @media only screen and (max-width: 480px){
-  .mat-card{
+  .mat-card,.alert{
     margin: 10px auto auto auto;
   }
 }
@@ -255,7 +266,7 @@ form {
 /* desktop */
 
 @media only screen and (min-width: 768px){
-  .mat-card{
+  .mat-card,.alert{
     margin: 10px auto auto auto;
   }
 }
@@ -263,7 +274,7 @@ form {
 /* non-mobile */
 
 @media only screen and (min-width: 481px) {
-  .mat-card{
+  .mat-card,.alert{
     padding: 10px 40px 10px 40px;
   }
 }
