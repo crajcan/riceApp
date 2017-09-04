@@ -4,17 +4,15 @@
   %ul#nav-hidden
     -if logged_in? 
       %li
-        %a{:href => user_path(current_user)}
-          Profile
+        =link_to "Profile", user_path(current_user)
       %li
         =link_to "Log out", logout_url, :method => "delete"
+      %li
+        =link_to "Home", "/home"
     -else
       %li
-        %a{:href => "/login"}
-          Log in
+        =link_to "Log in", "/login"
       %li
-        %a{:href => "/signup"}
-          Sign Up
-    %li
-      %a{:href => "/home"}
-        Home
+        =link_to "Sign Up", "/signup" 
+      %li
+        =link_to "Home", '/'
