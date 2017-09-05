@@ -2,11 +2,5 @@
 %h2.page-title{:style => "text-align: center;"}
   Users
 =will_paginate :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
--@users.each do |user|
-  .mat-card
-    = link_to user do
-      %h4
-        = user.name
-    %span
-      = "email: #{user.email}"
+=render @users
 =will_paginate :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

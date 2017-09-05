@@ -1,0 +1,7 @@
+-@users.each do |user|
+  .mat-card
+    = link_to user do
+      %h4
+        = user.name
+    %span
+      = "email: #{user.email}"
