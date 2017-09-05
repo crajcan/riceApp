@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.password_required = true
     if @user.save
       flash[:success] = "Welcome to Pivot!"
       Log_in(@user)

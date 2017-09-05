@@ -36,10 +36,4 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  private
-=begin
-    def password_required?
-      action_name != 'edit' 
-    end
-=end
 end
