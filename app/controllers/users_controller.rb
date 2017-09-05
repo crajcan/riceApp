@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.password_required = true
     if @user.save
       flash[:success] = "Welcome to Pivot!"
       Log_in(@user)
@@ -29,7 +28,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.password_required = false
     if @user.update_attributes(user_params)
       flash[:success] = "Profile edited succesfully" 
       redirect_to @user
