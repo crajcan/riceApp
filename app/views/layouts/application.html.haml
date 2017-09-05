@@ -15,7 +15,7 @@
     =render 'layouts/header'
     .push
     - flash.each do |message_type, message| 
-      .alert{ :class => "alert-#{message_type}"}=message
+      .mat-card.alert{ :class => "alert-#{message_type}"}=message
     =yield 
 
     -if Rails.env.development? 
