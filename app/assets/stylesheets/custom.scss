@@ -62,14 +62,18 @@ body{
     margin-bottom: 20px;
     font-size: .75em;
   }
-  .user-name{
+  a,.user-name{
     color: $link;
     text-decoration: none;
     :hover{
       text-decoration: underline;
     }
   }
+  a:hover{
+  text-decoration: underline;
+  }
 }
+
 
 .alert{
   text-align: center;
@@ -88,6 +92,9 @@ body{
   a{
     text-decoration: none;
     color: $paginate-other;
+  }
+  a:hover{
+    text-decoration: underline;
   }
   em{
     color: $paginate-current;
