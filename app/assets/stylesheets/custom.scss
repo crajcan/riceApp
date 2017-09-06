@@ -301,19 +301,6 @@ form {
     margin: 10px auto 10px auto;
     padding: 10px;  
   }
-  form{
-    input[type=email],
-    input[type=password],
-    input[type=submit],
-    .name-input
-    {
-      textarea{
-        font-family: inherit;
-        font-size: inherit; 
-      }
-      height: 35px;
-    }
-  }
 }
 
 /* tablet */
@@ -335,6 +322,20 @@ form {
 .on-device{
   body{
     cursor: pointer;
+  }
+  form{
+    input[type=email],
+    input[type=password],
+    input[type=submit],
+    .name-input
+    {
+      height: 35px;
+    }
+  }
+  .paginate{
+    *{
+      font-size: 1em;
+    }
   }
 }
 
