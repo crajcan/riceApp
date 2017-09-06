@@ -234,22 +234,22 @@ form {
   input[type=email],
   input[type=password],
   input[type=submit],
-  input[type=text]{
+  .name-input
+  {
     textarea{
       font-size: 8px;
     }
+    height: 25px;
     -webkit-appearance: none; 
     box-sizing: border-box;
     border-radius: 0;
     background-color: $input;
-    height: 25px;
     width: 100%;
     border: 1px solid $input-border;
     padding: 0 10 0 10;
     margin-bottom: 15px;
     box-shadow: 1px 1px 1px 0 $input-shadow;
   }
-
   input[type=submit] {
     position: relative;
     background: $submit;
@@ -300,6 +300,19 @@ form {
   .mat-card{
     margin: 10px auto 10px auto;
     padding: 10px;  
+  }
+  form{
+    input[type=email],
+    input[type=password],
+    input[type=submit],
+    .name-input
+    {
+      textarea{
+        font-family: inherit;
+        font-size: inherit; 
+      }
+      height: 35px;
+    }
   }
 }
 
