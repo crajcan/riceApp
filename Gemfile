@@ -18,7 +18,7 @@ gem 'pry'
 group :development, :test do
   gem 'sqlite3',     '1.3.13'
   gem 'byebug',      '9.0.6', platform: :mri
-  gem 'rspec-rails', '~> 3.5'
+  #gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -34,7 +34,6 @@ group :test do
   gem 'guard',                    '2.13.0'
   gem 'guard-minitest',           '2.4.4'
   gem 'database_cleaner'
-  #gem 'capybara'
   gem 'minitest-rails-capybara'
 end
 
