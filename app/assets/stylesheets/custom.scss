@@ -72,6 +72,9 @@ body{
   a:hover{
   text-decoration: underline;
   }
+  .suggestion{
+    margin: 0;
+  }
 }
 
 
@@ -300,6 +303,9 @@ form {
   .mat-card{
     margin: 10px auto 10px auto;
     padding: 10px;  
+    .suggestion{
+      margin-bottom: 10px;
+    }
   }
 }
 

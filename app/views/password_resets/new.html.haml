@@ -1,0 +1,9 @@
+=content_for(:title, "Forgot Password")
+.mat-card
+  %h3 Forgot Password
+  = form_for(:password_reset, url: password_resets_path) do |f|
+
+    = f.label "Please_enter_your_email:", id: "email" 
+    = f.email_field :email, autofocus: true
+ 
+    = f.submit "Submit"
