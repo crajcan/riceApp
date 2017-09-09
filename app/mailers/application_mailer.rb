@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'noreply@pivot.com'
+  default from: 'noreply@riceApp.com'
   layout 'mailer'
 end

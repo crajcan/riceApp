@@ -2,7 +2,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "Pivot"
+    @base_title = APP_NAME
   end
 
   test "should get contact" do

@@ -1,5 +1,8 @@
 =content_for(:title, "Contact")
 .mat-card
   %h3= "Contact"
-  %p This is the Contact page for <a href='https://rocky-lowlands-43794.herokuapp.com/'>pivot</a>. 
+  %p 
+    This is the Contact page for the
+    =succeed "." do
+      =link_to APP_NAME, "https://morning-mesa-43762.herokuapp.com/"
         

@@ -1,4 +1,7 @@
-=content_for(:title, "We Are Pivoting")
+=content_for(:title, "Welcome")
 .mat-card
   %h3 Welcome
-  %p This is the front page for <a href='https://rocky-lowlands-43794.herokuapp.com/'>pivot</a>. 
+  %p 
+    This is the front page for the
+    =succeed "." do
+      =link_to APP_NAME, "https://morning-mesa-43762.herokuapp.com/"

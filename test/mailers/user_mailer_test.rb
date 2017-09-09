@@ -6,9 +6,9 @@ class UserMailerTest < ActionMailer::TestCase
     user = users(:michael)
     user.activation_token = User.new_token
     mail = UserMailer.account_activation(user)
-    assert_equal "Pivot | Account Activation", mail.subject
+    assert_equal "#{APP_NAME} | Account Activation", mail.subject
     assert_equal [user.email], mail.to
-    assert_equal ["noreply@pivot.com"], mail.from
+    assert_equal ["noreply@riceApp.com"], mail.from
     assert_match user.name,               mail.body.encoded
     assert_match user.activation_token,   mail.body.encoded
     assert_match CGI.escape(user.email),  mail.body.encoded
@@ -18,9 +18,9 @@ class UserMailerTest < ActionMailer::TestCase
     user = users(:michael)
     user.reset_token = User.new_token
     mail = UserMailer.password_reset(user)
-    assert_equal "Pivot | Password Reset", mail.subject
+    assert_equal "#{APP_NAME} | Password Reset", mail.subject
     assert_equal [user.email], mail.to
-    assert_equal ["noreply@pivot.com"], mail.from
+    assert_equal ["noreply@riceApp.com"], mail.from
     assert_match user.reset_token,        mail.body.encoded
     assert_match CGI.escape(user.email),  mail.body.encoded
   end

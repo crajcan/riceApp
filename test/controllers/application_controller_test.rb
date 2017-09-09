@@ -2,7 +2,7 @@ require 'test_helper'
 class ApplicationControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "Pivot"
+    @base_title = APP_NAME 
   end
   
   test "should get login" do
@@ -15,7 +15,7 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
   test "should get root" do 
     get root_url
     assert_response :success
-    assert_select "title", "#{@base_title} | We Are Pivoting"
+    assert_select "title", "#{@base_title} | Welcome"
   end
 
 end

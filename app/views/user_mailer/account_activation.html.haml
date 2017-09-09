@@ -1,5 +1,5 @@
-%h1 Pivot
+%h1= APP_NAME
 %p Hi #{@user.name},
-%p Welcome to the Pivot! Click on the link below to activate your account: 
+%p=  "Welcome to the #{APP_NAME}! Click on the link below to activate your account:"
 = link_to "Activate", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email)
