@@ -1,0 +1,9 @@
+.mat-card
+  -if action_name != "show"
+    %span.user
+      =link_to post.user.name post.user
+  %span.timestamp{:style => "display: block;"}
+    %small  
+      =time_ago_in_words(post.created_at)
+  %span.content
+    =post.content  
