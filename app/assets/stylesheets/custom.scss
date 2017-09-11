@@ -241,11 +241,9 @@ form {
   input[type=email],
   input[type=password],
   input[type=submit],
-  .name-input
+  .name-input,
+  textarea
   {
-    textarea{
-      font-size: 8px;
-    }
     height: 25px;
     -webkit-appearance: none; 
     box-sizing: border-box;
@@ -268,7 +266,11 @@ form {
     font-weight: bold;
     margin-top: 15px;
   }
-
+  textarea{
+    height: 100px;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
   .checkbox{
     input[type=checkbox]{
       -webkit-appearance: none;
