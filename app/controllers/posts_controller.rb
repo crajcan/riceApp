@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :user_logged_in, only: [:create, :destroy] 
+  before_action :delete_rights,  only: :destroy
 
   def create
     @post = current_user.posts.build(post_params)
@@ -7,12 +8,15 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
+      flash[:danger] = "Post cannot be empty"
     end
-    flash[:danger] = "Post cannot be empty"
-    redirect_to root_url
+    redirect_to '/home'
   end
 
-  def destroy
+  def destroy 
+    @post.destroy
+    flash[:success] = "Post removed"
+    redirect_to request.referrer || root_url
   end
  
   private
@@ -21,9 +25,9 @@ class PostsController < ApplicationController
       params.require(:post).permit(:content)
     end
 
-    def correct_user
+    def delete_rights
       @post = current_user.posts.find_by(id: params[:id])
-      redirect_to root_url if @post.nil?
+      redirect_to root_url if @post.nil? || !current_user.admin?
     end
 
 end
