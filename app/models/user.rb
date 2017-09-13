@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
-  
- 
+   
   before_save { self.email = email.downcase }
   before_create :create_activation_digest
   validates :password, presence: true, length: { minimum: 6, maximum: 25 }, allow_nil: true 
@@ -13,7 +12,16 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false })
  
   has_secure_password
+
   has_many :posts, dependent: :destroy
+  has_many :active_relationships,  class_name:  "Relationship",
+                                   foreign_key: "unfollower_id",
+                                   dependent:   :destroy
+  has_many :unfollowing, through: :active_relationships, source: :unfollowed
+  has_many :passive_relationships, class_name:  "Relationship",
+                                   foreign_key: "unfollowed_id",
+                                   dependent:   :destroy
+  has_many :unfollowers, through: :passive_relationships, source: :unfollower
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -64,6 +72,18 @@ class User < ApplicationRecord
 
   def feed
     Post.where("user_id = ?", id)
+  end
+
+  def unfollow(other_user)
+    unfollowing << other_user
+  end
+
+  def follow(other_user)
+    unfollowing.delete(other_user)
+  end
+
+  def following?(other_user)
+    !unfollowing.include?(other_user)
   end
 
   private
