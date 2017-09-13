@@ -1,4 +1,6 @@
 =content_for(:title, "Home")
-.mat-card
-  %h3= current_user.name
-  %p You are logged in. 
+=render 'shared/post_form'
+-if @feed_items.any?
+  %ol.post-list
+    =render @feed_items 
+  =will_paginate @feed_items, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

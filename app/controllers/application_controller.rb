@@ -6,4 +6,14 @@ class ApplicationController < ActionController::Base
     redirect_to '/home' if logged_in?
   end
 
+  private
+
+    def user_logged_in
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
 end

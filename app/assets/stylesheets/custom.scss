@@ -75,8 +75,15 @@ body{
   .suggestion{
     margin: 0;
   }
+  .content{
+    margin: 0;
+  }
 }
 
+.post-list{
+  padding: 0;
+  margin: 0;
+}
 
 .alert{
   text-align: center;
@@ -107,6 +114,8 @@ body{
     display: none;
   }
 }
+
+
 
 
 /* header */
@@ -237,11 +246,9 @@ form {
   input[type=email],
   input[type=password],
   input[type=submit],
-  .name-input
+  .name-input,
+  textarea
   {
-    textarea{
-      font-size: 8px;
-    }
     height: 25px;
     -webkit-appearance: none; 
     box-sizing: border-box;
@@ -264,7 +271,12 @@ form {
     font-weight: bold;
     margin-top: 15px;
   }
-
+  textarea{
+    height: 100px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    resize: vertical;
+  }
   .checkbox{
     input[type=checkbox]{
       -webkit-appearance: none;
@@ -291,8 +303,8 @@ form {
     span{
       cursor: pointer;
       font-size: .8em;
-    }  
-  }
+    }
+  }  
 }
 
 

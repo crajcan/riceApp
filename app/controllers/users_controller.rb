@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_logged_in, only: [:edit, :update, :index]
+  before_action :user_logged_in, only: [:edit, :update, :index, :show]
   before_action :correct_user,   only: [:edit, :update]
   before_action :delete_rights,  only: :destroy
 
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
+    @posts = @user.posts.paginate(page: params[:page]) 
   end
 
   def new
@@ -54,21 +55,14 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    def user_logged_in
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
-
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
 
-    def delete_rights 
-      redirect_to(login_url) unless (current_user && current_user.admin?)
+    def delete_rights
+      @user = User.find(params[:id])
+      redirect_to(login_url) unless current_user && (current_user.admin? || current_user?(@user))
     end
 
 end
