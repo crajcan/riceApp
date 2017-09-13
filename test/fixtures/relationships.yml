@@ -1,0 +1,15 @@
+one:
+  unfollower: michael
+  unfollowed: lana
+
+two:
+  unfollower: michael
+  unfollowed: malory
+
+three:
+  unfollower: lana
+  unfollowed: michael
+
+four:
+  unfollower: archer
+  unfollowed: michael

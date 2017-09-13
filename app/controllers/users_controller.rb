@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :user_logged_in, only: [:edit, :update, :index, :show]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :user_logged_in, only: [:edit, :update, :index, :show, :unfollowing]
+  before_action :correct_user,   only: [:edit, :update, :unfollowing]
   before_action :delete_rights,  only: :destroy
 
   def index
@@ -47,6 +47,14 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:success] = "User deleted"
     redirect_to users_url
+  end
+
+  def settings
+    @user = current_user
+  end
+
+  def unfollowing
+    @users = @user.unfollowing.paginate(page: params[:page])
   end
 
   private 

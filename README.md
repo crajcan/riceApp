@@ -1,6 +1,6 @@
-# This app is 
+# This app is a business forum, a lean mini-facebook for professionals to share interesting events, news opportunites and ideas.
 
-To install this app get Rails 5.1.2 and Ruby ruby 2.3.0p0. 
+To install this app, first get Ruby 2.3.0p0. 
 
 To get started with the app, clone the repo and then install the needed gems: 
 

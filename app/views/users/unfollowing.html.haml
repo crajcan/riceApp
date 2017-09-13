@@ -1,0 +1,7 @@
+=content_for(:title, "Unfollowed")
+.mat-card
+  %h3= "Unfollowed Users"
+  %p
+    ="Below are the users you have unfollowed. You have removed #{@users.count} users' activity from your news feed. To re-follow a user just click the 'follow' link next to their name."
+=render @users
+=will_paginate :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

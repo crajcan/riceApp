@@ -2,7 +2,7 @@
   =form_for(@post) do |f|
     =render 'shared/error_messages', object: f.object
     =f.text_area :content, placeholder: "Create new post..."
-    =f.submit "Post"
+    =f.submit "Post", class: "form-submit"
     %span
       .file-upload
         =f.file_field :picture, accept: 'image/jpeg,image/gif/,image/png'

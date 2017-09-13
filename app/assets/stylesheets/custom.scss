@@ -59,7 +59,6 @@ body{
     font-size: 0.66em;
   }
   span{
-    margin-bottom: 20px;
     font-size: .75em;
   }
   a,.user-name{
@@ -245,7 +244,7 @@ form {
   } 
   input[type=email],
   input[type=password],
-  input[type=submit],
+  .form-submit,
   .name-input,
   textarea
   {
@@ -260,7 +259,7 @@ form {
     margin-bottom: 15px;
     box-shadow: 1px 1px 1px 0 $input-shadow;
   }
-  input[type=submit] {
+  .form-submit {
     position: relative;
     background: $submit;
     border: 1px solid $submit-border;
@@ -344,7 +343,7 @@ form {
   form{
     input[type=email],
     input[type=password],
-    input[type=submit],
+    .form-submit,
     .name-input
     {
       height: 35px;

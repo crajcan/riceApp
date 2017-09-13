@@ -23,3 +23,7 @@ users = User.order(:created_at).take(6)
   content = Faker::ChuckNorris.fact
   users.each { |user| user.posts.create!(content: content) }
 end
+
+unfollowing = users[3..6]
+user = User.first
+unfollowing.each { |unfollowed| user.unfollow(unfollowed) }
