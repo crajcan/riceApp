@@ -4,6 +4,7 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:michael)
+    @other_user = users(:archer)
   end
 
   test "micropost interface" do
@@ -34,7 +35,8 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
       delete post_path(first_post)
     end
     # Visit different user (no delete links)
-    get user_path(users(:archer))
+    log_in_as(@other_user)
+    get user_path(users(:michael))
     assert_select 'a', text: 'delete', count: 0
   end
 

@@ -116,6 +116,8 @@ body{
 }
 
 
+
+
 /* header */
 
 .push {
@@ -273,6 +275,7 @@ form {
     height: 100px;
     margin-top: 15px;
     margin-bottom: 0;
+    resize: vertical;
   }
   .checkbox{
     input[type=checkbox]{
@@ -300,8 +303,8 @@ form {
     span{
       cursor: pointer;
       font-size: .8em;
-    }  
-  }
+    }
+  }  
 }
 
 

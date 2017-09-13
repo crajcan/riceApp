@@ -1,7 +1,5 @@
 =content_for(:title, "Home")
 =render 'shared/post_form'
-%h2.page-title{:style => "text-align: center;"}
-  Feed
 -if @feed_items.any?
   %ol.post-list
     =render @feed_items 
