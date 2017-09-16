@@ -20,8 +20,10 @@ end
 
 users = User.order(:created_at).take(6)
 50.times do
-  content = Faker::ChuckNorris.fact
-  users.each { |user| user.posts.create!(content: content) }
+  users.each { |user| 
+    content = Faker::ChuckNorris.fact
+    user.posts.create!(content: content)
+  }
 end
 
 unfollowing = users[3..6]

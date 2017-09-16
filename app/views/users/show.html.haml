@@ -2,6 +2,7 @@
 .mat-card
   %h3= @user.name
   %p This is the infomation page about user #{@user.id}
+  =render 'relationship'
 -if @user.posts.any?
   %ol.post-list
     =render @posts

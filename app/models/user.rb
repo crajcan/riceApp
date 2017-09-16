@@ -71,13 +71,9 @@ class User < ApplicationRecord
   end
 
   def feed
-=begin
     unfollowing_ids = "SELECT unfollowed_id FROM relationships
                        WHERE  unfollower_id = :user_id"
-    Post.where("user_id NOT_IN (#{unfollowing_ids})
-                OR user_id = :user_id", user_id: id)
-=end
-    Post.where("user_id = ?", id) 
+    Post.where("user_id NOT IN (#{unfollowing_ids})", user_id: id)
   end
 
   def unfollow(other_user)
