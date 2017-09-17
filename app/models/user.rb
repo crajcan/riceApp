@@ -10,10 +10,9 @@ class User < ApplicationRecord
                     length: {maximum: 255}, 
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false })
- 
   has_secure_password
-
   has_many :posts, dependent: :destroy
+  has_many :replies, dependent: :destroy
   has_many :active_relationships,  class_name:  "Relationship",
                                    foreign_key: "unfollower_id",
                                    dependent:   :destroy

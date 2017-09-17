@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'replies/create'
+
+  get 'replies/destroy'
+
   root 'application#front'   
   get  '/contact', :to =>   'static_pages#contact'
   get  '/help', :to =>      'static_pages#help'
