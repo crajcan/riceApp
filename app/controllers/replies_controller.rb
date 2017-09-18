@@ -7,10 +7,8 @@ class RepliesController < ApplicationController
    @reply = @user.replies.build(reply_params)
    if @reply.save
      flash[:success] = "Reply created"
-     redirect_to "users/show"
    else
      flash[:danger] = "Reply cannot be empty."
-     redirect_to request.referrer ||
      #if request_location == "home"
      #  @feed_items = @user.feed.paginate(page: params[:page])
      #  redirect_to "/home"
@@ -19,6 +17,8 @@ class RepliesController < ApplicationController
      #  redirect_to @user
      #end  
    end
+    redirect_to request.referrer || root_url
+  end
 
   def destroy
     @reply.destroy
@@ -29,11 +29,11 @@ class RepliesController < ApplicationController
   private
   
     def reply_params
-      params.requires(:reply).permit(:content)#, :picture)
+      params.require(:reply).permit(:content)# , :picture)
     end
 
     def delete_rights
       @reply = current_user.replies.find_by(id: params[:id])
-      redirect_to request.referrer || root_url unless !@reply.nil? && (current_user.admin? || (current_user == @reply.user)
+      redirect_to request.referrer || root_url unless !@reply.nil? && (current_user.admin? || (current_user == @reply.user))
     end  
 end

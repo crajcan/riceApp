@@ -1,0 +1,11 @@
+.mat-card
+  %span.user
+    =link_to current_user.name, current_user
+  %span.time_stamp{:style => "display: inline;" }
+    %small
+      =time_ago_in_words(reply.created_at)
+  %p.content=reply.content
+  -if current_user?(reply.user) || current_user.admin?
+    %span
+      %small
+        =link_to "delete", reply, method: :delete, data: { confirm: "Are you sure?" }

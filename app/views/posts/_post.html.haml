@@ -1,14 +1,15 @@
 .mat-card
   %span.user
     =link_to post.user.name, post.user
-  %span.timestamp{:style => "display: block;"}
+  %span.timestamp{:style => "display: inline;"}
     %small  
       =time_ago_in_words(post.created_at)
-  %span.content{:style => "display: block;"}
+  %p.content{:style => "display: block;"}
     =post.content 
     =image_tag post.picture.url if post.picture?
   -if current_user?(post.user) || current_user.admin?
     %span
       %small
         =link_to "delete", post, method: :delete, data: { confirm: "Are you sure?"} 
-<!--  =render @replies -->
+  =render Reply.where(post: post)
+  =render 'shared/reply_form'   
