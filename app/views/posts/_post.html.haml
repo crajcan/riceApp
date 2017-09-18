@@ -12,4 +12,4 @@
       %small
         =link_to "delete", post, method: :delete, data: { confirm: "Are you sure?"} 
   =render Reply.where(post: post)
-  =render 'shared/reply_form'   
+  =render 'shared/reply_form', post: post 

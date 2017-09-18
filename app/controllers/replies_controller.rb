@@ -4,18 +4,12 @@ class RepliesController < ApplicationController
 
   def create
    @user = current_user
+   binding.pry
    @reply = @user.replies.build(reply_params)
    if @reply.save
      flash[:success] = "Reply created"
    else
      flash[:danger] = "Reply cannot be empty."
-     #if request_location == "home"
-     #  @feed_items = @user.feed.paginate(page: params[:page])
-     #  redirect_to "/home"
-     #else
-     #  @posts = @user.posts.paginate(page: params[:page])
-     #  redirect_to @user
-     #end  
    end
     redirect_to request.referrer || root_url
   end
@@ -27,11 +21,11 @@ class RepliesController < ApplicationController
   end
 
   private
-  
-    def reply_params
-      params.require(:reply).permit(:content)# , :picture)
-    end
 
+    def reply_params
+      params.require(:reply).permit(:content,:post_id)
+    end
+  
     def delete_rights
       @reply = current_user.replies.find_by(id: params[:id])
       redirect_to request.referrer || root_url unless !@reply.nil? && (current_user.admin? || (current_user == @reply.user))
