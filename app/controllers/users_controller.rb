@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
     @posts = @user.posts.paginate(page: params[:page])
+    @reply = current_user.replies.build if @posts
   end
 
   def new
