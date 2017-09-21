@@ -40,8 +40,6 @@ ActiveRecord::Schema.define(version: 20170916202821) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_replies_on_post_id"
     t.index ["user_id"], name: "index_replies_on_user_id"
-    t.index [nil], name: "index_replies_on_post"
-    t.index [nil], name: "index_replies_on_user"
   end
 
   create_table "users", force: :cascade do |t|
