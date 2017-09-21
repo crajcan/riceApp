@@ -6,6 +6,8 @@ class ReplyTest < ActiveSupport::TestCase
     @user = users(:michael)
     @post = posts(:orange) 
     @reply = @user.replies.build(content: "My first post", post: @post)
+    @reply1 = replies(:one)
+    @reply2 = replies(:two)
   end
 
   test "should be valid" do
@@ -32,6 +34,9 @@ class ReplyTest < ActiveSupport::TestCase
     assert_not @reply.valid?
   end 
 
+  test "order should be most recent last" do
+    assert_equal @reply1, Reply.last
+  end
 end
 
 

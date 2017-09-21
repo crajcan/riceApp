@@ -5,9 +5,10 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
     @other_user = users(:archer)
+    @last_user = users(:lana)
   end
 
-  test "micropost interface" do
+  test "post interface" do
     log_in_as(@user)
     get root_path
     assert_response :redirect
@@ -17,7 +18,7 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Post.count' do
       post posts_path, params: { post: { content: "" } }
     end
-    assert_response :redirect
+    assert_redirected_to '/home'
     follow_redirect!
     assert_select 'div.alert'
     # Valid submission
@@ -35,9 +36,9 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
       delete post_path(first_post)
     end
     # Visit different user (no delete links)
-    log_in_as(@other_user)
+    log_in_as(@last_user)
     get user_path(users(:michael))
-    assert_select 'a', text: 'delete', count: 0
+    assert_select 'a', text: 'delete', count: 1 
   end
 
 end

@@ -14,7 +14,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'title', full_title(@user.name)
     assert_select 'h3', text: @user.name
     assert_select '.paginate'
-    @user.posts.paginate(page: 1).each do |post|
+    @user.profile_feed.paginate(page: 1).each do |post|
       assert_match post.content, response.body
     end
   end

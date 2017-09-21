@@ -1,11 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  content: MyText
-  user: one
-  post: one
+  content: Reply1
+  user: archer
+  post: orange
+  created_at: <%= 10.minutes.ago %>
 
 two:
-  content: MyText
-  user: two
-  post: two
+  content: Reply2
+  user: lana
+  post: cat_video
+  created_at: <%= 20.minutes.ago %>

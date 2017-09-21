@@ -75,6 +75,12 @@ class User < ApplicationRecord
     Post.where("user_id NOT IN (#{unfollowing_ids})", user_id: id)
   end
 
+  def profile_feed
+    replied_to = "SELECT post_id FROM replies
+                  WHERE user_id = :user_id"
+    Post.where("user_id = :user_id OR id IN (#{replied_to})", user_id: id)
+  end
+
   def unfollow(other_user)
     unfollowing << other_user
   end

@@ -4,20 +4,21 @@ class RepliesController < ApplicationController
 
   def create
    @user = current_user
-   binding.pry
    @reply = @user.replies.build(reply_params)
    if @reply.save
      flash[:success] = "Reply created"
    else
      flash[:danger] = "Reply cannot be empty."
    end
-    redirect_to request.referrer || root_url
+    redirect_back_or(root_url)
+    #redirect_to request.referrer || root_url
   end
 
   def destroy
     @reply.destroy
     flash[:success] = "Reply removed"
-    redirect_to request.referrer || root_url
+    redirect_back_or(root_url)
+    #redirect_to request.referrer || root_url
   end
 
   private
