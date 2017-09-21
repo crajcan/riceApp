@@ -15,5 +15,15 @@ $(document).on('turbolinks:load',function(){
 
   });
 
+  //Show/hide reply form
+  $('.reply-form').css("display","none");
+    $('.reply-open').click(function () {
+      $(this).next('.reply-form').toggle();
+      $(this).text(function(i, text){
+        return text === "reply" ? "close" : "reply";
+      }); 
+    });
+
 });
+
 
