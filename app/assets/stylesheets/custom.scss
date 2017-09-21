@@ -79,6 +79,16 @@ body{
   }
 }
 
+.reply-open{
+  color: $link;
+  cursor: pointer;
+  font-size: .62em;
+  display: inline-block;
+}
+.reply-open:hover{
+  text-decoration: underline;
+}
+
 .post-list{
   padding: 0;
   margin: 0;
