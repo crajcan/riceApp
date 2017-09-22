@@ -79,6 +79,14 @@ body{
   }
 }
 
+.alert-success{
+  background-color: #b3ffcc;
+}
+
+.alert-danger{
+  background-color: #ffccdd;
+}
+
 .reply-card{
   box-shadow: 0 1px 3px 1px #666666;//$card-shadow;
 }
