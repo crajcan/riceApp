@@ -24,7 +24,7 @@ class RepliesController < ApplicationController
   private
 
     def reply_params
-      params.require(:reply).permit(:content,:post_id)
+      params.require(:reply).permit(:content, :post_id, :picture)
     end
   
     def delete_rights

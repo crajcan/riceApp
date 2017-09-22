@@ -17,6 +17,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "content or photo should be present" do
+    assert @post.valid?
     @post.content = " "
     assert_not @post.valid?
   end
