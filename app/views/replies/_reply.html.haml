@@ -1,6 +1,6 @@
-.mat-card
+.mat-card.reply-card
   %span.user
-    =link_to current_user.name, current_user
+    =link_to reply.user.name, reply.user
   %span.time_stamp{:style => "display: inline;" }
     %small
       =time_ago_in_words(reply.created_at)

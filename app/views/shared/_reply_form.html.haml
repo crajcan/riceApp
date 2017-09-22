@@ -1,5 +1,5 @@
 .reply-open reply
-.mat-card.reply-form
+.mat-card.reply-form.reply-card
   = form_for(@reply) do |f|
     = render 'shared/error_messages', object: f.object
     = f.hidden_field :post_id, :value => post.id
