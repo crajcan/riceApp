@@ -4,7 +4,9 @@
   %span.time_stamp{:style => "display: inline;" }
     %small
       =time_ago_in_words(reply.created_at)
-  %p.content=reply.content
+  %p.content{:style => "display: block;"}
+    =reply.content
+    =image_tag reply.picture.url if reply.picture?
   -if current_user?(reply.user) || current_user.admin?
     %span
       %small
