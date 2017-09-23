@@ -6,4 +6,4 @@
     =succeed " users' activity from your news feed. To re-follow a user just click the 'follow' link next to their name." do
       %strong#unfollowing= @users.count
 =render @users
-=will_paginate :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
+=will_paginate inner_window: 2, outer_window: 0, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

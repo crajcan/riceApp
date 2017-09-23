@@ -7,5 +7,5 @@
 -if @user.posts.any?
   %ol.post-list
     =render @posts
-  =will_paginate @posts, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
+  =will_paginate @posts, inner_window: 2, outer_window: 0, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
    

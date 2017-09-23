@@ -1,6 +1,6 @@
 =content_for(:title, "All users")
 %h2.page-title{:style => "text-align: center;"}
   Users
-=will_paginate :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
+=will_paginate inner_window: 2, outer_window: 0, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
 =render @users
-=will_paginate :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
+=will_paginate inner_window: 2, outer_window: 0, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

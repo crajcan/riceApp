@@ -134,6 +134,9 @@ body{
   span{
     display: none;
   }
+  .gap{
+    display: inline-block;
+  }
 }
 
 
@@ -267,7 +270,7 @@ form {
   input[type=email],
   input[type=password],
   .form-submit,
-  .name-input,
+  .text-input,
   textarea
   {
     height: 25px;
@@ -366,7 +369,7 @@ form {
     input[type=email],
     input[type=password],
     .form-submit,
-    .name-input
+    .text-input
     {
       height: 35px;
     }

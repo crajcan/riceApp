@@ -1,0 +1,15 @@
+=content_for(:title, "Access Codes")
+.mat-card
+  %h3= "Add an Access Code"
+  =form_for(@access_code) do |f|
+    =render 'shared/error_messages', object: f.object
+
+    =f.label :new_code
+    =f.text_field :code, :class => 'text-input'
+
+    =f.submit "Create code", class: "form-submit"
+-@access_codes = AccessCode.all
+-unless @access_codes.nil? || @access_codes.empty?
+  .mat-card
+    %h3= "Current Access Codes"
+    = render @access_codes.all

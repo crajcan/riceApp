@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'access_codes/new'
+
+  get 'access_codes/create'
+
+  get 'access_codes/destroy'
+
   get 'replies/create'
 
   get 'replies/destroy'
@@ -14,6 +20,7 @@ Rails.application.routes.draw do
   delete '/logout', :to =>  'sessions#destroy'
   get  '/signup',:to =>     'users#new'
   post '/signup',:to =>     'users#create' 
+  get '/access_codes' =>    'access_codes#new'
 
   resources :users do
     member do
@@ -27,5 +34,6 @@ Rails.application.routes.draw do
   resources :posts,               only: [:create, :destroy]
   resources :replies,             only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
+  resources :access_codes,        only: [:new, :create , :destroy]
 
 end

@@ -3,4 +3,4 @@
 -if @feed_items.any?
   %ol.post-list
     =render @feed_items 
-  =will_paginate @feed_items, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
+  =will_paginate @feed_items, inner_window: 2, outer_window: 0, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

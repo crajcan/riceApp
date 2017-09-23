@@ -7,5 +7,5 @@
     = "email: #{user.email}"
   -if current_user.admin? && !current_user?(user)
     %span
-      =link_to "delete", user, method: :delete, data: { confirm: "You sure?"}
+      =link_to "delete", user, method: :delete, data: { confirm: "Are you sure?"}
   =render 'relationship'

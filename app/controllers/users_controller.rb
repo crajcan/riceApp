@@ -20,8 +20,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    access_code = user_params[:code]
     @user = User.new(user_params)
-    if @user.save
+    if correct_code(access_code) && @user.save
       @user.send_activation_email
       flash[:success] = "Please check your email to activate your account"
       redirect_to root_url
@@ -62,7 +63,11 @@ class UsersController < ApplicationController
   private 
   
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, 
+                                   :email, 
+                                   :password, 
+                                   :password_confirmation,
+                                   :code)
     end
 
     def correct_user
@@ -73,6 +78,16 @@ class UsersController < ApplicationController
     def delete_rights
       @user = User.find(params[:id])
       redirect_to(login_url) unless current_user && (current_user.admin? || current_user?(@user))
+    end
+
+    def correct_code(access_code)
+      binding.pry
+      if access_code && ((AccessCode.all.map { |c| c.code }).include? access_code)
+        true
+      else
+        @user.errors.add(:activation_code, "is invalid")
+        false
+      end
     end
 
 end
