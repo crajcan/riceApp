@@ -81,7 +81,6 @@ class UsersController < ApplicationController
     end
 
     def correct_code(access_code)
-      binding.pry
       if access_code && ((AccessCode.all.map { |c| c.code }).include? access_code)
         true
       else
