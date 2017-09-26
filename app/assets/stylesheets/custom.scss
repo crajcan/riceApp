@@ -50,12 +50,9 @@ body{
   height: auto;
   width: 100%;
   max-width: 100%;
-  background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+
 }
  
 /* cards */
@@ -405,6 +402,12 @@ form {
   }
   #logo1{
     display: none;
+  }
+  body{
+     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
   }
 }
 
