@@ -1,14 +1,12 @@
 class StaticPagesController < ApplicationController
-  before_action :user_logged_in, only: :settings
+  before_action :user_logged_in, only: [:settings, :home]
 
 
   def home
-    if logged_in?
-      @post = current_user.posts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
-      @reply = current_user.replies.build if @feed_items
-      store_location
-    end
+    @post = current_user.posts.build
+    @feed_items = current_user.feed.paginate(page: params[:page])
+    @reply = current_user.replies.build if @feed_items
+    store_location
   end
 
   def help

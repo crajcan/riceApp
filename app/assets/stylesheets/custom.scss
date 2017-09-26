@@ -176,18 +176,24 @@ header {
   z-index: 2;
   width: 100%;
   position: fixed;
-  padding: 8px 0px 8px 0px;
+  padding: 0;//8px 0px 8px 0px;
   background-color: $header;
-  #logo {
+  .logo {
     font-size: 18px;
     color: $logo; 
     text-decoration: none;
-    display: inline;
-    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #logo1{
+    margin: 5px 0 5px 5px;
   } 
+  #logo2{
+    margin: 10px 0 0px 5px;
+  }
   .hamburger{
     color: $hamburger;
-    margin-right: 10px;
+    margin: 10px 10px 8px 0;
     float: right;
     width: 25px;
     height: 22px;
@@ -202,12 +208,12 @@ header {
     float: right;
     width: 100%;
     margin: 0;
-    margin-top: 7px;
+    margin-top: 2px;
     display: none;
     list-style: none;
     font-size: .66em;
     a {
-      padding-right: 11px;
+      padding-right: 13px;
       float: right;  
       text-align: right;
       display: block;
@@ -236,7 +242,11 @@ header {
 }
 
 .open{
-  padding: 8px 0px 0px 0px;
+  
+  //padding: 8px 0px 0px 0px;
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(27, 60, 117, 1.0)), to(rgba(27, 60, 117, 0.9)));
+  
   .hamburger{ 
     color: $header; 
     border: 2px solid $header;
@@ -367,6 +377,9 @@ form {
       margin-bottom: 10px;
     }
   }
+  #logo2{
+    display: none;
+  }
 }
 
 /* tablet */
@@ -374,6 +387,9 @@ form {
 @media only screen and (min-width:481px){
   .mat-card{
     margin: 10px 10px 10px 10px;
+  }
+  #logo1{
+    display: none;
   }
 }
 

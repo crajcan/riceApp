@@ -1,5 +1,6 @@
 %header
-  =link_to APP_NAME, root_path, :id => "logo"
+  = image_tag "4869_rice_owls-primary_on_dark-2010.jpg", height: 35, width: 42, :class => "logo", :id => "logo1"
+  =link_to APP_NAME, root_path, :class => "logo", :id => 'logo2'
   .hamburger.noselect#burger ☰
   %ul#nav-hidden
     -if logged_in? 
