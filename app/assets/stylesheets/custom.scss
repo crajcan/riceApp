@@ -51,7 +51,7 @@ body{
   width: 100%;
   background-attachment: fixed;
   background-position: center;
-  //background-size: cover;
+  background-size: cover;
   //-webkit-background-size: cover;
   //-moz-background-size: cover;
   //-o-background-size: cover;
@@ -429,6 +429,7 @@ form {
 .on-device{
   body{
     cursor: pointer;
+    background-size: contain;
   }
   form{
     input[type=email],
