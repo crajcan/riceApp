@@ -379,18 +379,7 @@ form {
   }  
 }
 
-
 /* mobile */
-
-@media only screen and (max-height: 736){
- .image0,
- .image1,
- .image2,
- .image3,
- .image4{
-   height: 776;
- }
-}
 
 
 @media only screen and (max-width: 480px){
@@ -429,7 +418,7 @@ form {
 .on-device{
   body{
     cursor: pointer;
-    background-size: 480px 776px;
+    background-size: 776px;
     background-position: left top;
   }
   form{
