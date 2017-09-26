@@ -23,6 +23,24 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 20px;
 }
 
+.image-0{
+  background-image: url("2013-04-Bob-Metcalfe-MIT-Forum-by-eschipul-8167-7608d.jpg");
+}
+.image-1{
+  background-image: url("5446897377_4e7e938a07_b.jpg");
+}
+.image-2{
+  background-image: url("Fondren_Library,_Rice_University.JPG");
+}
+.image-3{
+  background-image: url("Lovett_Hall.jpg");
+}
+.image-4{
+  background-image: url("rice-university-1085927_960_720.jpg");
+}
+
+
+
 body{
   margin-top: 100px;
   background-color: $body;
@@ -31,6 +49,9 @@ body{
   top: 0;
   height: 100%;
   width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
  
 /* cards */
@@ -40,7 +61,7 @@ body{
   z-index: 1;
   max-width: 678px;//768 - 80 (accounts for margin)
   clear: both;
-  background: $card;
+  background-color: rgba(255,255,255,0.9);//$card;
   box-shadow: 0 1px 3px 0 $card-shadow;
   padding: 10px 40px 10px 40px;
   h3, h4{
@@ -79,6 +100,12 @@ body{
   }
 }
 
+
+
+.alert{
+  text-align: center;
+}
+
 .alert-success{
   background-color: #b3ffcc;
 }
@@ -88,7 +115,8 @@ body{
 }
 
 .reply-card{
-  box-shadow: 0 1px 3px 1px #666666;//$card-shadow;
+  box-shadow: 0 1px 3px 1px #666666;
+  background-color: rgba(255,255,255,0.0);//$card;
 }
 
 .reply-open{
@@ -104,10 +132,6 @@ body{
 .post-list{
   padding: 0;
   margin: 0;
-}
-
-.alert{
-  text-align: center;
 }
 
 .paginate{

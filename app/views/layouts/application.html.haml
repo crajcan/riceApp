@@ -8,11 +8,12 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = render 'layouts/ie_shim'
+    -imageclass = "image-#{rand(5)}"
     :css
       body {
         font-family: 'Roboto';
       } 
-  %body
+  %body{:class => imageclass }
     =render 'layouts/header'
     .push
     - flash.each do |message_type, message| 
