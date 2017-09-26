@@ -49,10 +49,13 @@ body{
   top: 0;
   height: auto;
   width: 100%;
-  max-width: 100%;
+  max-height: 776;
   background-attachment: fixed;
   background-position: center;
-
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
  
 /* cards */
@@ -380,6 +383,10 @@ form {
 
 /* mobile */
 
+@media only screen and (max-height: 736){
+
+}
+
 
 @media only screen and (max-width: 480px){
   .mat-card{
@@ -403,12 +410,7 @@ form {
   #logo1{
     display: none;
   }
-  body{
-     background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  }
+
 }
 
 /* desktop */
