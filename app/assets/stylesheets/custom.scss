@@ -47,15 +47,14 @@ body{
   margin: 0;
   left: 0;
   top: 0;
-  height: auto;
+  height: 100%;
   width: 100%;
-  max-height: 776;
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  //background-size: cover;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
 }
  
 /* cards */
@@ -384,7 +383,13 @@ form {
 /* mobile */
 
 @media only screen and (max-height: 736){
-
+ .image0,
+ .image1,
+ .image2,
+ .image3,
+ .image4{
+   height: 776;
+ }
 }
 
 
