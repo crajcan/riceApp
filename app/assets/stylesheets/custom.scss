@@ -253,12 +253,10 @@ header {
   background-image: -moz-linear-gradient(
   rgba(27, 60, 117, 0.9) 0%, rgba(27, 60, 117, 0.9) 95%);
 
-  filter: progid:DXImageTransform.Microsoft.gradient(
-  startColorstr=#550000FF, endColorstr=#550000FF);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#55193B79, endColorstr=#55193B79);
 
   /* IE8 uses -ms-filter for whatever reason... */
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(
-  startColorstr=#550000FF, endColorstr=#550000FF);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#55193B79, endColorstr=#55193B79);
 
   .hamburger{ 
     color: $header; 
