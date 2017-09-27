@@ -407,17 +407,17 @@ form {
   .on-device.image-2{
     //4685x2635
     //background-image: url("Fondren_Library,_Rice_University.JPG");
-    background-size: 26% 26%;
+    background-size: initial;//26% 26%;
   }
   .image-3{
     //800x492
     background-image: url("Lovett_Hall.jpg");
-    background-size: 136% 136%;
+    background-size: initial;//136% 136%;
   }
   .image-4{
     //960x639
     background-image: url("rice-university-1085927_960_720.jpg");
-    backgorund-size: 106% 106%;
+    backgorund-size: initial;//106% 106%;
   }
 }
 
