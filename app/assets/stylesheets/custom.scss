@@ -387,6 +387,28 @@ form {
 /* mobile */
 
 
+.on-device{
+  body{
+    cursor: pointer;
+    background-position: center 0px;
+  }
+  form{
+    input[type=email],
+    input[type=password],
+    .form-submit,
+    .text-input
+    {
+      height: 35px;
+    }
+  }
+  .paginate{
+    *{
+      font-size: 1em;
+    }
+  }
+}
+
+
 @media only screen and (max-width: 480px){
   .mat-card{
     margin: 10px auto 10px auto;
@@ -399,12 +421,12 @@ form {
     display: none;
   }
   .image-0{
-    //business school?
+    //business schoo?
     //640x360
     background-image: url("2013-04-Bob-Metcalfe-MIT-Forum-by-eschipul-8167-7608d.jpg");
     background-size: 1228px 691px; 
   }
-  .image-1.on-device{
+  .on-device.image-1{
     //fountain?
     //1024x768
     background-image: url("5446897377_4e7e938a07_b.jpg");
@@ -427,7 +449,7 @@ form {
     //960x639
     background-image: url("rice-university-1085927_960_720.jpg");
     background-size: 960px 691px;
-  }
+  }*/
 }
 
 /* tablet */
@@ -449,28 +471,6 @@ form {
     margin: 10px auto 10px auto; 
   }
 
-}
-
-
-.on-device{
-  body{
-    cursor: pointer;
-    background-position: center 0px;
-  }
-  form{
-    input[type=email],
-    input[type=password],
-    .form-submit,
-    .text-input
-    {
-      height: 35px;
-    }
-  }
-  .paginate{
-    *{
-      font-size: 1em;
-    }
-  }
 }
 
 /* Debug */
