@@ -362,28 +362,6 @@ form {
 }
 
 
-.image-0{
-  //640x360
-  background-image: url("2013-04-Bob-Metcalfe-MIT-Forum-by-eschipul-8167-7608d.jpg");
-}
-.image-1{
-  //1024x768
-  background-image: url("5446897377_4e7e938a07_b.jpg");
-}
-.image-2{
-  //4685x2635
-  background-image: url("Fondren_Library,_Rice_University.JPG");
-}
-.image-3{
-  //800x492
-  background-image: url("Lovett_Hall.jpg");
-}
-.image-4{
-  //960x639
-  background-image: url("rice-university-1085927_960_720.jpg");
-}
-
-
 /* mobile */
 
 
@@ -409,6 +387,29 @@ form {
 }
 
 
+.image-0{
+  //640x360
+  background-image: url("2013-04-Bob-Metcalfe-MIT-Forum-by-eschipul-8167-7608d.jpg");
+}
+.image-1{
+  //1024x768
+  background-image: url("5446897377_4e7e938a07_b.jpg");
+}
+.image-2{
+  //4685x2635
+  background-image: url("Fondren_Library,_Rice_University.JPG");
+}
+.image-3{
+  //800x492
+  background-image: url("Lovett_Hall.jpg");
+}
+.image-4{
+  //960x639
+  background-image: url("rice-university-1085927_960_720.jpg");
+}
+
+
+
 @media only screen and (max-width: 480px){
   .mat-card{
     margin: 10px auto 10px auto;
@@ -421,14 +422,14 @@ form {
     display: none;
   }
   .image-0{
-    //business school?
+    //business schoolc
     //640x360
     background-image: url("2013-04-Bob-Metcalfe-MIT-Forum-by-eschipul-8167-7608d.jpg");
     background-size: 1228px 691px; 
   }
   .on-device{
     .image-1{
-      //fountain?
+      //fountainc
       //1024x768
       background-image: url("5446897377_4e7e938a07_b.jpg");
       background-size: 921px 691px;
@@ -436,7 +437,7 @@ form {
   }
   .on-device{
     .image-2{
-      //library?
+      //libraryc
       //4685x2635
       background-image: url("Fondren_Library,_Rice_University.JPG");
       background-size: 1218px 691px;
@@ -465,12 +466,76 @@ form {
   #logo1{
     display: none;
   }
-
+  .on-device{
+    .image-0{
+      //business schoolc
+      //640x360
+      background-image: url("2013-04-Bob-Metcalfe-MIT-Forum-by-eschipul-8167-7608d.jpg");
+      background-size: 1706px 959px; 
+    }
+    .image-1{
+      //fountainc
+      //1024x768
+      background-image: url("5446897377_4e7e938a07_b.jpg");
+      background-size: 1278px 959px;
+    }
+    .image-2{
+      //libraryc
+      //4685x2635
+      background-image: url("Fondren_Library,_Rice_University.JPG");
+      background-size: 1705px 959px;
+    }
+    .image-3{
+      //arches buildingc
+      //800x492c
+      background-image: url("Lovett_Hall.jpg");
+      background-size:  1559px 959px;
+    }
+    .image-4{
+      //free imagec
+      //960x639
+      background-image: url("rice-university-1085927_960_720.jpg");
+      background-size: 1440px 959px;
+    }
+  }
 }
 
-/* desktop */
 
 @media only screen and (min-width: 768px){
+
+  .on-device{
+    .image-0{
+      //business schoolc
+      //640x360
+      background-image: url("2013-04-Bob-Metcalfe-MIT-Forum-by-eschipul-8167-7608d.jpg");
+      background-size: 2259px 1271px; 
+    }
+    .image-1{
+      //fountainc
+      //1024x768
+      background-image: url("5446897377_4e7e938a07_b.jpg");
+      background-size: 1694px 1271px;
+    }
+    .image-2{
+      //libraryc
+      //4685x2635
+      background-image: url("Fondren_Library,_Rice_University.JPG");
+      background-size: 2259px 1271px;
+    }
+    .image-3{
+      //arches buildingc
+      //800x492c
+      background-image: url("Lovett_Hall.jpg");
+      background-size: 2066px 1271px;
+    }
+    .image-4{
+      //free imagec
+      //960x639
+      background-image: url("rice-university-1085927_960_720.jpg");
+      background-size: 1909px 1271px;;
+    }
+  }
+
   .mat-card{
     margin: 10px auto 10px auto; 
   }
