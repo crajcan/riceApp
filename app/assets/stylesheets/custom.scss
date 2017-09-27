@@ -402,6 +402,7 @@ form {
   .image-1{
     //1024x768
     background-image: url("5446897377_4e7e938a07_b.jpg");
+    background-size: initial;
   }
   .on-device.image-2{
     //4685x2635
@@ -416,7 +417,7 @@ form {
   .image-4{
     //960x639
     background-image: url("rice-university-1085927_960_720.jpg");
-    backgorund-size: 106% 106%; 
+    backgorund-size: 106% 106%;
   }
 }
 
