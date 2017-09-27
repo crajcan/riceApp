@@ -26,7 +26,7 @@ $(document).on('turbolinks:load',function(){
   //background image mobile
   $(window).scroll(function() {
     var scrolledY = $(window).scrollTop();
-    $('.on-device > body').css('background-position', 'left ' + ((scrolledY)) + 'px');
+    $('.on-device > body').css('background-position', 'center ' + ((scrolledY)) + 'px');
   }); 
 });
 
