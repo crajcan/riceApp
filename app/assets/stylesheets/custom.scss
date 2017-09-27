@@ -383,6 +383,11 @@ form {
 
 
 @media only screen and (max-width: 480px){
+  .on-device{
+    body{
+      background-size: 691px;
+    }
+  }
   .mat-card{
     margin: 10px auto 10px auto;
     padding: 10px;  
@@ -419,8 +424,6 @@ form {
   body{
     cursor: pointer;
     background-position: center center;
-    max-width: 480px;
-    background-size: initial;//420px 691px;
   }
   form{
     input[type=email],
