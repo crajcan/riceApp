@@ -23,13 +23,11 @@ $(document).on('turbolinks:load',function(){
         return text === "reply" ? "close" : "reply";
       }); 
     });
-/*
   //background image mobile
   $(window).scroll(function() {
     var scrolledY = $(window).scrollTop();
     $('.on-device > body').css('background-position', 'left ' + ((scrolledY)) + 'px');
   }); 
-*/
 });
 
 
