@@ -419,6 +419,8 @@ form {
   body{
     cursor: pointer;
     background-position: center top;
+    max-width: 480px;
+    height: auto;
   }
   form{
     input[type=email],
