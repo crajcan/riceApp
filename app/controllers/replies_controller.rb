@@ -28,7 +28,8 @@ class RepliesController < ApplicationController
     end
   
     def delete_rights
-      @reply = current_user.replies.find_by(id: params[:id])
+      @reply = Reply.find params[:id]
+      binding.pry
       redirect_to request.referrer || root_url unless !@reply.nil? && (current_user.admin? || (current_user == @reply.user))
     end  
 end
