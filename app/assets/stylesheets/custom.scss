@@ -314,17 +314,7 @@ form {
     margin-bottom: 15px;
     box-shadow: 1px 1px 1px 0 $input-shadow;
   }
-  .form-submit {
-    position: relative;
-    background: $submit;
-    border: 1px solid $submit-border;
-    color: $submit-font;
-    padding-right: 0;
-    height: 30px; 
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 15px;
-  }
+
   textarea{
     height: 100px;
     margin-top: 15px;
@@ -358,7 +348,29 @@ form {
       cursor: pointer;
       font-size: .8em;
     }
-  }  
+  }
+  input[type="submit" i].relationship{
+    color: $link;
+    background-color: rgba(255,255,255,0);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: .62em;
+  }
+  .relationship:hover{
+      text-decoration: underline;
+  }
+  .form-submit {
+    position: relative;
+    background: $submit;
+    border: 1px solid $submit-border;
+    color: $submit-font;
+    padding-right: 0;
+    height: 30px; 
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+  }
 }
 
 
