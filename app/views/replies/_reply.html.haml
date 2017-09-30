@@ -5,7 +5,7 @@
     %small
       =time_ago_in_words(reply.created_at)
   %p.content{:style => "display: block;"}
-    =reply.content
+    =raw Rinku.auto_link(reply.content, mode=:all, link_attr=nil, skip_tags=nil)
     =image_tag reply.picture.url if reply.picture?
   -if current_user?(reply.user) || current_user.admin?
     %span

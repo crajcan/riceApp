@@ -17,7 +17,7 @@ gem 'fog',           '1.40.0'
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'pry'
-
+gem 'rinku'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.13'
