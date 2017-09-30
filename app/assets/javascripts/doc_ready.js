@@ -15,19 +15,42 @@ $(document).on('turbolinks:load',function(){
 
   });
 
+
   //Show/hide reply form
   $('.reply-form').css("display","none");
     $('.reply-open').click(function () {
+      //open reply form
       $(this).next('.reply-form').toggle();
+      //change control text
       $(this).text(function(i, text){
         return text === "reply" ? "close" : "reply";
       }); 
+
+      $(this).next('.reply-form').find('#reply_picture').bind('change', function() {
+        console.log('found reply_picture'); 
+        var size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+          console.log("in reply if");
+          alert('Maximum file size is 5MB. Please cleoose a smaller file.');
+        } else {
+          var photo_name = this.files[0].name;
+          $(this).next('.photo-label').text(function(i, text){
+            return text = photo_name + " attached.";
+          });
+        }
+      });
+
+
     });
+
+
   //background image mobile
   $(window).scroll(function() {
     var scrolledY = $(window).scrollTop();
     $('.on-device > body').css('background-position', 'center ' + ((scrolledY)) + 'px');
-  }); 
+  });
+
+ 
 });
 
 
