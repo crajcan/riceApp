@@ -9,4 +9,5 @@ class Reply < ApplicationRecord
   validates :content, presence: { if: -> { picture.blank? } }
   validates :picture, presence: { if: -> { content.blank? } }
   validate :picture_size
+
 end
