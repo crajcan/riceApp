@@ -55,4 +55,6 @@ class PictureUploader < CarrierWave::Uploader::Base
     end
   end
 
+  process :auto_orient
+
 end
