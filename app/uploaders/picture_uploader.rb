@@ -48,4 +48,11 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  #Rotates the image based on the EXIF Orientation
+  def auto_orient
+    manipulate! do |image|
+       image.tap(&:auto_orient)
+    end
+  end
+
 end

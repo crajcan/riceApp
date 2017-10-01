@@ -30,8 +30,8 @@ $(document).on('turbolinks:load',function(){
         var size_in_megabytes = this.files[0].size/1024/1024;
         if (size_in_megabytes > 5) {
           alert('Maximum file size is 5MB. Please choose a smaller file.');
-          $(this).wrap('<form>').closest('form').get(0).reset();
-          $(this).unwrap();
+//          $(this).wrap('<form>').closest('form').get(0).reset();
+//          $(this).unwrap();
         } else {
           var photo_name = this.files[0].name;
           $(this).next('.photo-label').text(function(i, text){

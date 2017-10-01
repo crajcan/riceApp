@@ -6,7 +6,7 @@
       =time_ago_in_words(post.created_at)
   %p.content{:style => "display: block;"}
     =raw Rinku.auto_link(post.content, mode=:all, link_attr=nil, skip_tags=nil)
-    =image_tag post.picture.url if post.picture?
+  =image_tag(post.picture.url, :class => "picture") if post.picture?
   -if current_user?(post.user) || current_user.admin?
     %span
       %small

@@ -11,14 +11,12 @@ class RepliesController < ApplicationController
      flash[:danger] = "Reply cannot be empty."
    end
     redirect_back_or(root_url)
-    #redirect_to request.referrer || root_url
   end
 
   def destroy
     @reply.destroy
     flash[:success] = "Reply removed"
     redirect_back_or(root_url)
-    #redirect_to request.referrer || root_url
   end
 
   private
