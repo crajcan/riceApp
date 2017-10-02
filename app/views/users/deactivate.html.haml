@@ -1,0 +1,5 @@
+=content_for(:title, "Deactivate")
+.mat-card
+  %h3= "Deactivate"
+  %p Clicking the link below will deactivate your account. This action is irreversable. All of your user settings, information, posts, and replies will be destroyed. 
+  =link_to "deactivate", @user, method: :delete, data: {confirm: "Are you sure?"}, class: "link"

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_logged_in, only: [:edit, :update, :index, :show, :unfollowing]
+  before_action :user_logged_in, only: [:edit, :update, :index, :show, :unfollowing, :deactivate, :destroy]
   before_action :correct_user,   only: [:edit, :update, :unfollowing]
   before_action :delete_rights,  only: :destroy
 
@@ -43,6 +43,10 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def deactivate
+    @user = current_user
   end
   
   def destroy

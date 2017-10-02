@@ -1,5 +1,5 @@
 =content_for(:title, "Settings")
 .mat-card
   %h3= "Settings"
-  %span
-    =link_to "Manage who you follow", unfollowing_user_path(@user)
+  %p=link_to "Manage who you follow", unfollowing_user_path(@user)
+  %p=link_to "Deactivate account", '/deactivate'

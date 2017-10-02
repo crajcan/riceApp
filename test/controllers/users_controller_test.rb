@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user       = users(:michael)
     @other_user = users(:archer)
+    @base_title = APP_NAME
   end
 
   test "should redirect index when not logged in" do
@@ -72,5 +73,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get unfollowing_user_path(@user)
     assert_redirected_to login_url
   end  
+
+
+  test "should get deactivate only when logged in" do
+    get '/deactivate'
+    assert_response :redirect
+    follow_redirect!
+    log_in_as(@user)
+    get '/deactivate'
+    assert_response :success
+    assert_select "title", "#{@base_title} | Deactivate"
+  end
+
 
 end
