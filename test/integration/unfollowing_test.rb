@@ -5,6 +5,7 @@ class UnfollowingTest < ActionDispatch::IntegrationTest
   def setup 
     @user = users(:michael)
     log_in_as(@user)
+    @other = users(:archer)
   end
 
   test "unfollowing page" do
@@ -25,4 +26,31 @@ class UnfollowingTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "should unfollow a user the standard way" do
+    assert_difference '@user.unfollowing.count', 1 do
+      post relationships_path, params: { unfollowed_id: @other.id }
+    end
+  end
+  
+  test "should unfollow a user with Ajax" do
+    assert_difference '@user.unfollowing.count', 1 do
+      post relationships_path, xhr: true, params: { unfollowed_id: @other.id }
+    end
+  end
+  
+  test "should follow a user the standard way" do
+    @user.unfollow(@other)
+    relationship = @user.active_relationships.find_by(unfollowed_id: @other.id)
+    assert_difference '@user.unfollowing.count', -1 do
+      delete relationship_path(relationship)
+    end
+  end
+  
+  test "should follow a user with Ajax" do
+    @user.unfollow(@other)
+    relationship = @user.active_relationships.find_by(unfollowed_id: @other.id)
+    assert_difference '@user.unfollowing.count', -1 do
+      delete relationship_path(relationship), xhr: true
+    end
+  end
 end
