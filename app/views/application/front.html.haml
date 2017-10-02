@@ -2,10 +2,12 @@
 .mat-card
   %h3 Welcome
   %p 
-    This is business forum for professionals to share interesting events, news, opportunities, and ideas.
+    This is a business forum for professionals to share interesting events, news, opportunities, and ideas.
   %p 
     If you do not have an account please
-    =link_to "sign up", "/signup_url"
+    =succeed "." do
+      =link_to "sign up", "/signup"
   %p 
     or 
-    =link_to 'log in', "/login"
+    =succeed "." do
+      =link_to 'log in', "/login"
