@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     end
 
     def delete_rights
-      @post = current_user.posts.find_by(id: params[:id])
+      @post = Post.find_by(id: params[:id])
       redirect_to root_url unless !@post.nil? && (current_user.admin? || (current_user == @post.user))
     end
 

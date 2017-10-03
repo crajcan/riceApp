@@ -2,6 +2,12 @@
 .mat-card
   %h3 Welcome
   %p 
-    This is the front page for the
+    This is a business forum for professionals to share interesting events, news, opportunities, and ideas.
+  %p 
+    If you do not have an account please
     =succeed "." do
-      =link_to APP_NAME, "https://morning-mesa-43762.herokuapp.com/"
+      =link_to "sign up", "/signup"
+  %p 
+    or 
+    =succeed "." do
+      =link_to 'log in', "/login"
