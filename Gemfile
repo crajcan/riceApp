@@ -39,6 +39,7 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
   gem 'database_cleaner'
   gem 'minitest-rails-capybara'
+  gem 'selenium-webdriver'
 end
 
 group :production do
