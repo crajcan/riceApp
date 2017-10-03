@@ -12,7 +12,7 @@ $(document).on('turbolinks:load',function(){
       $("#nav-hidden").hide();
       $("header").removeClass('open');
     });
-
+    return false;
   });
 
 
