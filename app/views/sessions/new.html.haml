@@ -3,7 +3,7 @@
   %h3= "Login"
   = form_for(:session, url: login_url) do |f|
 
-    = f.label :email, for: "something", id: "email" 
+    = f.label :email
     = f.email_field :email, autofocus: true
 
     = f.label :password 
