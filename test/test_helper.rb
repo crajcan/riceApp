@@ -1,9 +1,10 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-require 'capybara/rails'
-require 'capybara/minitest'
+#require 'capybara/rails'
+#require 'capybara/minitest'
 require 'minitest/reporters'
+#require 'capybara-screenshot/minitest'
 Minitest::Reporters.use!
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -22,12 +23,20 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
+=begin
+  def teardown
+    Capybara.reset_sessions!
+    Capybara.use_default_driver
+  end  
+=end
   
 end
 
 class ActionDispatch::IntegrationTest
 
-  include Capybara::DSL
+  
+  #include Capybara::DSL
+  #Capybara.default_driver = :selenium
 
   def log_in_as(user, password: 'password', remember_me: '1')
     post login_path, params: { session: { email: user.email,
