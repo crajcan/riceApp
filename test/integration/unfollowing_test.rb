@@ -45,7 +45,7 @@ class UnfollowingTest < ActionDispatch::IntegrationTest
       delete relationship_path(relationship)
     end
   end
-  
+
   test "should follow a user with Ajax" do
     @user.unfollow(@other)
     relationship = @user.active_relationships.find_by(unfollowed_id: @other.id)
@@ -53,4 +53,5 @@ class UnfollowingTest < ActionDispatch::IntegrationTest
       delete relationship_path(relationship), xhr: true
     end
   end
+
 end
