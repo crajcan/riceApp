@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   post '/signup',:to =>     'users#create' 
   get '/access_codes' =>    'access_codes#new'
   get '/deactivate' =>      'users#deactivate'
+  post '/relationships/:id' => 'relationships#create'
 
   resources :users do
     member do

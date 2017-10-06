@@ -1,2 +1,5 @@
-$("#follow_form").html("<%= escape_javascript(render('users/follow')) %>");
-$("#unfollowing").html('<%= @user.unfollowing.count %>');
+<%=Rails.logger.info "selecting elements after create/unfollow"%>
+var user_id = <%= @user.id %>;
+var matchers = ".unfollow_form_" + user_id.toString();
+$(matchers).parent().html('<%= escape_javascript(render('users/follow')) %>');
+$("#unfollowing").html('<%= current_user.unfollowing.count %>');

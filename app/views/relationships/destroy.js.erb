@@ -1,2 +1,4 @@
-$("#follow_form").html("<%= escape_javascript(render('users/unfollow')) %>");
-$("#unfollowing").html('<%= @user.unfollowing.count %>');
+<%=Rails.logger.info "selecting elements after destroy/refollow"%>
+form_id = "#edit_relationship_<%=@relationship_id%>";
+$(form_id).parent().html('<%= escape_javascript(render('users/unfollow')) %>');
+$("#unfollowing").html('<%= current_user.unfollowing.count %>');
