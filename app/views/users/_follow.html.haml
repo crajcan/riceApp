@@ -1,5 +1,5 @@
 - Rails.logger.info "delete/refollow rendered"
 = form_for(current_user.active_relationships.find_by(unfollowed_id: @user.id), 
-  html: { method: :delete, :class => "follow_form_#{@user.id}" }, remote: true) do |f|                                          
+  html: { method: :delete }, remote: true) do |f|                                          
   = f.submit "follow", :class => 'relationship'
 
