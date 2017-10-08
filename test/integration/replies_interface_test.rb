@@ -54,4 +54,44 @@ class RepliesInterfaceTest < ActionDispatch::IntegrationTest
     assert_no_match 'Reply2', response.body
   end  
 
+  test "reply interface ajax" do
+    log_in_as(@user)
+    get root_path
+    assert_response :redirect
+    follow_redirect!
+    assert_match 'Reply1', response.body
+    assert_match 'Reply2', response.body
+    #Invalid submission
+    assert_no_difference 'Reply.count' do
+      post replies_path, xhr: true, params: { reply: { content: "",
+                                            user_id: @other_user.id,
+                                            post_id: @post.id } } 
+    end
+    
+    #--- these might change due to replies controller
+    assert_redirected_to '/home'
+    follow_redirect!
+    assert_select 'div.alert'    
+    #---    
+
+    #valid submission
+    assert_difference 'Reply.count', 1 do
+      post replies_path, xhr: true, params: { reply: { content: "Reply3",
+                                            user_id: @other_user.id,
+                                            post_id: @post.id } }
+    end
+    #admin delete reply
+    assert_match 'Reply3', response.body
+    assert_difference 'Reply.count', -1 do
+      delete reply_path(Reply.last), xhr: true
+    end
+    assert_no_match 'Reply3', response.body
+    #delete own reply
+    log_in_as(users(:lana))
+    assert_difference 'Reply.count', -1 do
+      delete reply_path(replies(:two)), xhr: true
+    end
+    assert_no_match 'Reply2', response.body
+  end  
+
 end
