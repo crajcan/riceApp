@@ -4,7 +4,7 @@ RSpec.describe "AsyncReplies", type: :feature do
   describe "The Interface" do   
     fixtures :all
     
-    it "allows you to POST and DELETE replies with http" do
+    it "allows you to POST and DELETE replies" do
       @user = users(:archer)
       visit login_path
       expect(page).to have_current_path(login_path)
@@ -20,9 +20,6 @@ RSpec.describe "AsyncReplies", type: :feature do
       expect(page).to have_content('This is my test reply')
       expect(page).to have_css('.alert-success')
       expect(page).to have_content('Reply created')
-    end
-
-    it "allows you to POST and DELETE replies with ajax" do 
     end
 
   end
