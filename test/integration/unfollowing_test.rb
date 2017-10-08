@@ -30,12 +30,17 @@ class UnfollowingTest < ActionDispatch::IntegrationTest
     assert_difference '@user.unfollowing.count', 1 do
       post relationships_path, params: { unfollowed_id: @other.id }
     end
+    assert_response :redirect
+    follow_redirect!
+    assert_not flash.empty?
   end
   
   test "should unfollow a user with Ajax" do
     assert_difference '@user.unfollowing.count', 1 do
       post relationships_path, xhr: true, params: { unfollowed_id: @other.id }
     end
+    assert_response :success 
+    #assert flash.empty?
   end
   
   test "should follow a user the standard way" do
@@ -44,6 +49,9 @@ class UnfollowingTest < ActionDispatch::IntegrationTest
     assert_difference '@user.unfollowing.count', -1 do
       delete relationship_path(relationship)
     end
+    assert_response :redirect
+    follow_redirect!
+    assert_not flash.empty?
   end
 
   test "should follow a user with Ajax" do
@@ -52,6 +60,8 @@ class UnfollowingTest < ActionDispatch::IntegrationTest
     assert_difference '@user.unfollowing.count', -1 do
       delete relationship_path(relationship), xhr: true
     end
+    assert_response :success
+    #assert flash.empty?
   end
 
 end
