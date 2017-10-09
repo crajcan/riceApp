@@ -7,12 +7,13 @@ class RepliesController < ApplicationController
     @reply = @user.replies.build(reply_params)
     if @reply.save
       flash[:success] = "Reply created"
+      respond_to do |format|
+        format.html { redirect_back_or(root_url) }
+        format.js
+      end
     else
       flash[:danger] = "Reply cannot be empty."
-    end
-    respond_to do |format|
-      format.html { redirect_back_or(root_url) }
-      format.js
+      redirect_back_or(root_url)
     end
   end
 

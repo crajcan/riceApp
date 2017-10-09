@@ -68,11 +68,6 @@ class RepliesInterfaceTest < ActionDispatch::IntegrationTest
                                             post_id: @post.id } } 
     end
     
-    #--- these might change due to replies controller
-    assert_redirected_to '/home'
-    follow_redirect!
-    assert_select 'div.alert'    
-    #---    
 
     #valid submission
     assert_difference 'Reply.count', 1 do

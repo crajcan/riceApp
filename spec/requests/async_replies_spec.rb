@@ -18,8 +18,6 @@ RSpec.describe "AsyncReplies", type: :feature do
       fill_in("reply[content]", :with => "This is my test reply")
       click_button('post reply')
       expect(page).to have_content('This is my test reply')
-      expect(page).to have_css('.alert-success')
-      expect(page).to have_content('Reply created')
     end
 
   end
