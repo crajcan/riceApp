@@ -1,6 +1,6 @@
-.reply-open reply
-.mat-card.reply-form.reply-card
-  = form_for(@reply) do |f|
+.reply-open{:id => "reply-open-#{post.id}"} reply
+.mat-card.reply-form.reply-card{:id => "reply-form-#{post.id}"}
+  = form_for(@reply, remote:true) do |f|
     = render 'shared/error_messages', object: f.object
     = f.hidden_field :post_id, :value => post.id
     = f.text_area :content, placeholder: "Reply..."

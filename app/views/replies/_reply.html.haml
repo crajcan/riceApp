@@ -1,4 +1,4 @@
-.mat-card.reply-card
+.mat-card.reply-card{:id => "reply-#{reply.id}"}
   %span.user
     =link_to reply.user.name, reply.user
   %span.time_stamp{:style => "display: inline;" }
@@ -10,4 +10,4 @@
   -if current_user?(reply.user) || current_user.admin?
     %span
       %small
-        =link_to "delete", reply, method: :delete, data: { confirm: "Are you sure?" }
+        =link_to "delete", reply, remote: true, method: :delete, data: { confirm: "Are you sure?" }

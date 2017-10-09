@@ -1,0 +1,20 @@
+console.log('in app/views/replies/create.js.erb');
+var post_id = <%= @reply.post_id %>;
+var reply_open = "#reply-open-" + post_id.toString();
+var reply_form = "#reply-form-" + post_id.toString();
+
+//render new reply
+var reply = $("<div>").html('<%= escape_javascript(render(@reply)) %>');
+$(reply).insertBefore(reply_open);
+
+//clear the form
+var pattern = reply_form + " > #new_reply";
+console.log("pattern =" + pattern);
+$(pattern)[0].reset();
+
+//close the form
+
+$(reply_form).toggle();
+$(reply_open).text(function(i, text){
+  return text === "reply" ? "close" : "reply";
+});

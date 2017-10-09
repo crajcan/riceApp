@@ -3,20 +3,26 @@ class RepliesController < ApplicationController
   before_action :delete_rights, only: :destroy
 
   def create
-   @user = current_user
-   @reply = @user.replies.build(reply_params)
-   if @reply.save
-     flash[:success] = "Reply created"
-   else
-     flash[:danger] = "Reply cannot be empty."
-   end
-    redirect_back_or(root_url)
+    @user = current_user
+    @reply = @user.replies.build(reply_params)
+    if @reply.save
+      flash[:success] = "Reply created"
+    else
+      flash[:danger] = "Reply cannot be empty."
+    end
+    respond_to do |format|
+      format.html { redirect_back_or(root_url) }
+      format.js
+    end
   end
 
   def destroy
     @reply.destroy
     flash[:success] = "Reply removed"
-    redirect_back_or(root_url)
+    respond_to do |format|
+      format.html { redirect_back_or(root_url) }
+      format.js
+    end
   end
 
   private

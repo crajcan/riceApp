@@ -1,0 +1,4 @@
+console.log('in app/views/replies/destroy.js.erb');
+var reply_id = <%=@reply.id%>;
+var matcher = "#reply-" + reply_id.toString();
+$(matcher).hide();
