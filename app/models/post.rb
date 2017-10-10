@@ -8,4 +8,12 @@ class Post < ApplicationRecord
   validates :content, presence: { if: -> { picture.blank? } }
   validates :picture, presence: { if: -> { content.blank? } }
   validate :picture_size
+
+  validates :title, length: { maximum: 100 }
+  validates_presence_of :title, :if => :event?
+
+  validates_presence_of :event_time, :if  => :event?
+
+  validates :event_location, length: { maximum: 100 }
+  validates_presence_of :event_location, :if => :event?
 end
