@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   before_action :user_logged_in, only: [:settings, :home]
 
+  def calendar
+  end
 
   def home
     @post = current_user.posts.build
