@@ -50,6 +50,34 @@ $(document).on('turbolinks:load',function(){
     $('.on-device > body').css('background-position', 'center ' + ((scrolledY)) + 'px');
   });
 
+  //toggle event/post form
+  $('#event-form-switch').click(function(){
+    $('#post_content').css('margin-top', '0');
+    if ($(this).hasClass("event-form-open")) { 
+      $('.event-form').css('display', 'block');
+      $('.event-form-open').attr('class', 'event-form-close');
+      $(this).text("Close event form");
+      $("textarea").attr("placeholder", "Describe the event...");
+      $("#post_title").attr("placeholder", "");
+    } else {
+      $('.event-form').css('display', 'none');
+      $('.event-form-close').attr('class', 'event-form-open');    
+      $(this).text("Make this post an event");
+      $("textarea").attr("placeholder", "Create new post...");
+      $("#post_title").attr("placeholder", "title (optional)");
+      //clear event fields
+      $('#post_event_location').val('');
+      $('select').val(''); 
+    }
+  }); 
+
+  $('#post_content').click(function(){
+    $('.post-form-hidden').css('display', 'block');
+    $('#post-form-title').css('display', 'none');
+    $(this).css('height', '100px');
+    $(this).css('margin-top', '15');
+    $(this).css('margin-bottom', '15px');
+  }); 
  
 });
 

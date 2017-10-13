@@ -53,6 +53,7 @@ body{
     text-align: center;
     border-bottom: 1px solid $card-header-border;
     padding-bottom: 5px;
+    margin-bottom: 0px;
   }
   h4{
     margin-bottom: 5px;
@@ -111,16 +112,6 @@ body{
   background-color: rgba(255,255,255,0.0);//$card;
 }
 
-.reply-open{
-  color: $link;
-  cursor: pointer;
-  font-size: .62em;
-  display: inline-block;
-}
-.reply-open:hover{
-  text-decoration: underline;
-}
-
 .post-list{
   padding: 0;
   margin: 0;
@@ -154,9 +145,6 @@ body{
     display: inline-block;
   }
 }
-
-
-
 
 /* header */
 
@@ -305,8 +293,6 @@ form {
     display: inline-block;
     margin-bottom: 5px;
   } 
-  input[type=email],
-  input[type=password],
   .form-submit,
   .text-input,
   textarea
@@ -322,12 +308,11 @@ form {
     margin-bottom: 15px;
     box-shadow: 1px 1px 1px 0 $input-shadow;
   }
-
   textarea{
-    height: 100px;
-    margin-top: 15px;
-    margin-bottom: 0;
+    height: 25px;
     resize: vertical;
+    margin-top: 25px;
+    margin-bottom: 0;
   }
   .checkbox{
     input[type=checkbox]{
@@ -392,6 +377,47 @@ form {
     font-weight: bold;
     margin-top: 15px;
   }
+  #reply_content{
+    height: 100px;
+  }
+}
+
+/* Event Form */
+
+.event-form{
+  display: none;
+}
+
+.event-time{
+  margin-bottom: 10px;
+}
+
+
+.time-select{
+  font-size: .60em;
+}
+
+
+#event-form-switch,
+.reply-open{
+  color: $link;
+  cursor: pointer;
+  font-size: .62em;
+  display: inline-block;
+}
+
+#event-form-switch:hover,
+.reply-open:hover{
+  text-decoration: underline;
+}
+
+#event-form-switch{
+  margin: 10px 0;
+  display: none;
+}
+
+.post-form-hidden{
+  display: none;
 }
 
 

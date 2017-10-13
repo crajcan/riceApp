@@ -4,13 +4,19 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.event = true unless @post.event_location.empty? || @post.event_time.nil?
+    #binding.pry
     if @post.save
-      flash[:success] = "Post created!"
+      @post.event? ? flash[:success] = "Event posted!" 
+                   : flash[:success] = "Post created!"
+      redirect_to '/home'        
     else
+      flash[:danger] = "invalid post, please try again"
+      @post = current_user.posts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
-      flash[:danger] = "Post cannot be empty"
+      @reply = current_user.replies.build if @feed_items
+      render 'static_pages/home'
     end
-    redirect_to '/home'
   end
 
   def destroy 
@@ -22,7 +28,11 @@ class PostsController < ApplicationController
   private
   
     def post_params
-      params.require(:post).permit(:content, :picture)
+      params.require(:post).permit( :title,
+                                    :content, 
+                                    :picture,
+                                    :event_time,
+                                    :event_location)
     end
 
     def delete_rights

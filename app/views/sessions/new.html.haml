@@ -4,10 +4,10 @@
   = form_for(:session, url: login_url) do |f|
 
     = f.label :email
-    = f.email_field :email, autofocus: true
+    = f.email_field :email, autofocus: true, :class => "text-input"
 
     = f.label :password 
-    = f.password_field :password
+    = f.password_field :password, :class => "text-input"
 
     = f.label :remember_me, class: "checkbox inline" do
       = f.check_box :remember_me

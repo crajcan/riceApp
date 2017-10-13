@@ -1,15 +1,36 @@
 .mat-card
+  %h3.event-form= "Create a new event"
+  %h3#post-form-title Create a post
   =form_for(@post) do |f|
     =render 'shared/error_messages', object: f.object
-    =f.text_area :content, placeholder: "Create new post..."
-    =f.submit "Post", class: "form-submit"
+    
+    #event-form-switch.event-form-open.post-form-hidden Make this post an event
+
+    = f.label :title, :class => "event-form"
+    = f.text_field :title, :class => 'text-input post-form-hidden', placeholder: "title (optional)" 
+    = f.label :date_and_time, :class => "event-form", :for => 'post_event_time'
+    
+    .time-select.event-form
+      = f.datetime_select :event_time, { ampm: true,
+                                       order: [:month, :day, :year]}, 
+                                      { :class => "event-time" }
+    
+    = f.label :location, :class => "event-form", :for => 'post_event_location'
+    = f.text_field :event_location, :class => 'text-input event-form'   
+  
+    = f.label :description, :class => "event-form", :for => 'post_content' 
+    = f.text_area :content, placeholder: "Create new post..."
+
+    = f.submit "Post", class: "form-submit"
+
     %label
       =f.file_field :picture, accept: 'image/jpeg,image/gif/,image/png'
       .photo-label attach photo
 
+
 :javascript
   $('#post_picture').bind('change', function() {
-
+    console.log('loaded first script');
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
       alert('Maximum file size is 5MB. Please choose a smaller file.');
@@ -22,3 +43,4 @@
       }); 
     }
   });
+ 

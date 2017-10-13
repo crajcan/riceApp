@@ -8,13 +8,13 @@
     = f.text_field :name, :class => 'text-input', autofocus: true
 
     = f.label :email 
-    = f.email_field :email
+    = f.email_field :email, :class => 'text-input'
 
     = f.label :password 
-    = f.password_field :password
+    = f.password_field :password, :class => 'text-input'
 
     = f.label :password_confirmation 
-    = f.password_field :password_confirmation 
+    = f.password_field :password_confirmation, :class => 'text-input'
 
     = f.label :access_code
     = f.text_field :code, :class => 'text-input'
