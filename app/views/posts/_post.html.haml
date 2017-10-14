@@ -1,4 +1,6 @@
 .mat-card
+  -if post.title?
+    %h3= post.title
   %span.post-title
     =link_to post.user.name, post.user
   %span.timestamp{:style => "display: inline;"}
