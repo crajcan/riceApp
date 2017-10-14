@@ -5,17 +5,16 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.event = true unless @post.event_location.empty? || @post.event_time.nil?
-    #binding.pry
     if @post.save
       @post.event? ? flash[:success] = "Event posted!" 
                    : flash[:success] = "Post created!"
       redirect_to '/home'        
     else
-      flash[:danger] = "invalid post, please try again"
-      @post = current_user.posts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
-      @reply = current_user.replies.build if @feed_items
-      render 'static_pages/home'
+      flash[:danger] = "Invalid post"
+      respond_to do |format|
+        format.html { redirect_to '/home' }
+        format.js
+      end
     end
   end
 

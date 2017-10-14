@@ -1,7 +1,8 @@
--if object.errors.any?
+-@object ||= object
+-if @object.errors.any?
   #error_explanation
     %span
-      The form contains #{pluralize(object.errors.count, "error")}
+      The form contains #{pluralize(@object.errors.count, "error")}
     %ul
-      -object.errors.full_messages.each do |msg| 
+      -@object.errors.full_messages.each do |msg| 
         %li= msg

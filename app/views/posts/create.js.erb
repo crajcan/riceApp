@@ -1,0 +1,6 @@
+<% @object = @post %>
+if ($("#error_explanation").length === 0) {
+  $("<%= escape_javascript(render('shared/error_messages')) %>").insertBefore("#new_post");
+} else { 
+  $("#error_explanation").html("<%= escape_javascript(render('shared/error_messages')) %>");
+}
