@@ -4,7 +4,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.event = true unless @post.event_location.empty? || @post.event_time.nil?
+    @post.event = true unless @post.event_location.nil? || 
+                              @post.event_location.empty? || 
+                              @post.event_time.nil?
     if @post.save
       @post.event? ? flash[:success] = "Event posted!" 
                    : flash[:success] = "Post created!"
