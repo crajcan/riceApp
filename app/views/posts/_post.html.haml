@@ -6,6 +6,10 @@
   %span.timestamp{:style => "display: inline;"}
     %small  
       =time_ago_in_words(post.created_at)
+  -if post.event?
+    -Time::DATE_FORMATS[:custom_long_ordinal] = "%B %e, %l:%M %p"
+    .event-info= "Where: #{post.event_location}"
+    .event-info= "When: #{post.event_time.to_formatted_s(:custom_long_ordinal)}"
   %p.content{:style => "display: block;"}
     =raw Rinku.auto_link(post.content, mode=:all, link_attr=nil, skip_tags=nil)
   =image_tag(post.picture.url, :class => "picture") if post.picture?
