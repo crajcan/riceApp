@@ -1,6 +1,5 @@
 .mat-card
   %h3.event-form= "Create a new event"
-  %h3#post-form-title Create a post
   =form_for(@post, remote:true) do |f|
     =render 'shared/error_messages', object: f.object
     
