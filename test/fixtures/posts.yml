@@ -44,3 +44,40 @@ van:
   content: "Dude, this van's, like, rolling probable cause."
   created_at: <%= 4.hours.ago %>
   user: lana
+
+event1: 
+  title: "event1"
+  content: "this is an event"
+  created_at: <%= Time.now %>
+  user: lana
+  event: true
+  event_location: "lana's"
+  event_time: <%= Time.now + 1.month - 1.day %>
+
+event2:
+  title: "event2"
+  content: "this is another event"
+  created_at: <%= Time.now %>
+  user: lana
+  event: true
+  event_location: "lana's"
+  event_time: <%= Time.now + 1.month + 1.day %>
+
+event3:
+  title: "event3"
+  content: "this is a third event"
+  created_at: <%= Time.now %>
+  user: lana
+  event: true
+  event_location: "lana's"
+  event_time: <%= Time.now + 2.months - 1.day %>
+
+event4:
+  title: "event4"
+  content: "this is a fourth event"
+  created_at: <%= Time.now %>
+  user: lana
+  event: true
+  event_location: "lana's"
+  event_time: <%= Time.now + 2.months + 1.day %>
+
