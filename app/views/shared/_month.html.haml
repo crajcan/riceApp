@@ -1,0 +1,32 @@
+-month = locals[:month]
+-events = locals[:events]
+-first_day_day_of_week = month.wday
+-rows = 4
+-rows = 5 if (first_day_day_of_week + month.end_of_month.day > 35)
+%table{ :style => "width: 100%;", :cellpadding => '0' }
+  %caption=month.strftime("%B")
+  %tr
+    %th S
+    %th M
+    %th T
+    %th W
+    %th R
+    %th F
+    %th S
+  -(0..rows).each do |i|
+    %tr{ :id => "row_#{i}" }
+      -(0..6).each do |j|
+        -day_of_month = (i*7 + j) - (first_day_day_of_week + -1)
+        -day = month + (day_of_month.days - 1)
+        %td{ :id => "cell_#{i}_#{j}", :class => "cell" }
+          -unless ((day_of_month < 1) || (day_of_month > month.end_of_month.day))  
+            ="#{day_of_month}"
+            -events.each do |e|
+              -event_date = e.event_time.to_date
+              -calendar_date = (month + day_of_month.days).to_date
+              -if event_date === calendar_date
+                %div x
+              
+
+
+

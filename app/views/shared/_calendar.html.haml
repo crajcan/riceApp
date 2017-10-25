@@ -1,0 +1,11 @@
+=content_for(:title, "Calendar")
+.mat-card 
+  %h3
+    Calendar of events
+  -first_day_this_month = Time.parse(Time.now.strftime("%Y-%m-01"))
+  -month = first_day_this_month
+  -months = 6
+  -events = events(Time.now, Time.now + months.months)
+  -(1..months).each do |m|
+    =render 'shared/month', :locals => { :month => month, :events => events }
+    -month = month + 1.month
