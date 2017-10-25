@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
-  before_action :user_logged_in, only: [:create, :destroy] 
+  before_action :user_logged_in, only: [:create, :destroy, :show] 
   before_action :delete_rights,  only: :destroy
+
+  def show
+    @post = Post.find(params[:id])
+    @reply = current_user.replies.build if @post
+  end
 
   def create
     @post = current_user.posts.build(post_params)
@@ -25,7 +30,7 @@ class PostsController < ApplicationController
     flash[:success] = "Post removed"
     redirect_to request.referrer || root_url
   end
- 
+
   private
   
     def post_params
