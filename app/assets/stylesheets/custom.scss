@@ -520,6 +520,15 @@ form {
     background-image: url("rice-university-1085927_960_720.jpg");
     background-size: 960px 691px;
   }
+
+  .column-1{
+    width: 100%; 
+  }
+  
+  .column-2{
+    display: none;
+  }
+
 }
 
 
@@ -571,6 +580,14 @@ form {
       background-size: 1440px 959px;
     }
   }
+
+  .column-1{
+    width: 100%;   
+  }
+  
+  .column-2{
+    display: none;
+  }
 }
 
 
@@ -611,6 +628,23 @@ form {
 
   .mat-card{
     margin: 10px auto 10px auto; 
+  }
+
+  .column-1{
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    width: 60%;
+  }
+
+  .column-2{
+    margin-left: 10px;
+    display: block;
+    float: left;
+    width: 35%;
+    .calendar{
+      padding: 10px;
+    }
   }
 
 }
