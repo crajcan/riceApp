@@ -23,10 +23,6 @@
             ="#{day_of_month}"
             -events.each do |e|
               -event_date = e.event_time.to_date
-              -calendar_date = (month + day_of_month.days).to_date
+              -calendar_date = (month + day_of_month.days - 1.day).to_date
               -if event_date === calendar_date
-                %div x
-              
-
-
-
+                =link_to '', e, :class => 'event-link'
