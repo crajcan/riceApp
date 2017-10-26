@@ -13,11 +13,6 @@ cat_video:
   created_at: <%= 2.hours.ago %>
   user: michael
 
-most_recent:
-  content: "Writing a short test"
-  created_at: <%= Time.zone.now %>
-  user: michael
-
 <% 30.times do |n| %>
 micropost_<%= n %>:
   content: <%= Faker::Lorem.sentence(5) %>
@@ -80,4 +75,11 @@ event4:
   event: true
   event_location: "lana's"
   event_time: <%= Time.now + 2.months + 1.day %>
+
+most_recent:
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+  user: michael
+
+
 
