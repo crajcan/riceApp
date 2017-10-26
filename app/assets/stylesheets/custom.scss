@@ -651,5 +651,15 @@ td{
   font-size: .62em;
   border: 1px solid black;
   height: 50px;
+  padding: 2px;
 }
 
+.event-link{
+  background-color: red;
+  height: 8px;
+  width: 8px;
+  border: 2px solid red;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
