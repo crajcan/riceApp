@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :posts, dependent: :destroy
   has_many :replies, dependent: :destroy
+  has_many :pins, dependent: :destroy
   has_many :active_relationships,  class_name:  "Relationship",
                                    foreign_key: "unfollower_id",
                                    dependent:   :destroy

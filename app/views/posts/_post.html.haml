@@ -16,6 +16,13 @@
   -if current_user?(post.user) || current_user.admin?
     %span
       %small
-        =link_to "delete", post, method: :delete, data: { confirm: "Are you sure?"} 
+        =link_to "delete", post, method: :delete, data: { confirm: "Are you sure?"}
+  %span
+    %small 
+      -pin = Pin.where('user_id = ? AND post_id = ?', current_user.id, post.id).first
+      -unless pin.nil?
+        =link_to "unpin", pin_path(id: pin.id), method: :delete
+      -else
+        =link_to "pin", pins_path(post_id: post.id), method: :post 
   =render Reply.where(post: post)
   =render 'shared/reply_form', post: post 

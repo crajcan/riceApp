@@ -41,5 +41,6 @@ Rails.application.routes.draw do
   resources :replies,             only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
   resources :access_codes,        only: [:new, :create , :destroy]
+  resources :pins,                only: [:create, :destroy]
 
 end
