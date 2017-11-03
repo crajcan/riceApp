@@ -20,9 +20,9 @@
   %span
     %small 
       -pin = Pin.where('user_id = ? AND post_id = ?', current_user.id, post.id).first
-      -unless pin.nil?
-        =link_to "unpin", pin_path(id: pin.id), method: :delete
+      -if pin.nil?
+        =render 'posts/pin', :locals => { :post => post }
       -else
-        =link_to "pin", pins_path(post_id: post.id), method: :post 
+        =render 'posts/unpin', :locals => { :pin => pin } 
   =render Reply.where(post: post)
   =render 'shared/reply_form', post: post 
