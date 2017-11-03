@@ -4,9 +4,9 @@ class PinTest < ActiveSupport::TestCase
 
   def setup
     @pin = Pin.new(user_id: users(:michael).id,
-                   post_id: posts(:orange).id)
+                   post_id: posts(:tau_manifesto).id)
     @other = Pin.new(user_id: users(:michael).id,
-                   post_id: posts(:orange).id)
+                   post_id: posts(:tau_manifesto).id)
   end
 
   test 'should be valid' do
