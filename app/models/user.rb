@@ -71,9 +71,12 @@ class User < ApplicationRecord
   end
 
   def feed
+    pins = Pin.where('user_id = ? OR user_id = ?', id, 1)#assumes only one admin
+    pinned_post_ids = pins.map{ |p| p.post_id }
+    posts = Post.find pinned_post_ids 
     unfollowing_ids = "SELECT unfollowed_id FROM relationships
                        WHERE  unfollower_id = :user_id"
-    Post.where("user_id NOT IN (#{unfollowing_ids})", user_id: id)
+    posts + Post.where("user_id NOT IN (#{unfollowing_ids})", user_id: id)
   end
 
   def profile_feed
