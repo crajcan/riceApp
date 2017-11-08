@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class StaticPagesController < ApplicationController
   before_action :user_logged_in, only: [:settings, :home]
 

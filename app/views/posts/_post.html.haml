@@ -17,12 +17,14 @@
     %span
       %small
         =link_to "delete", post, method: :delete, data: { confirm: "Are you sure?"}
-  %span
-    %small 
-      -pin = Pin.where('user_id = ? AND post_id = ?', current_user.id, post.id).first
-      -if pin.nil?
-        =render 'posts/pin', :locals => { :post => post }
-      -else
-        =render 'posts/unpin', :locals => { :pin => pin } 
+  //fix this so we're not looking up pins twice
+  -unless post.admin_pinned && !current_user.admin?
+    %span
+      %small 
+        -pin = Pin.where('user_id = ? AND post_id = ?', current_user.id, post.id).first
+        -if pin.nil?
+          =render 'posts/pin', :locals => { :post => post }
+        -else
+          =render 'posts/unpin', :locals => { :pin => pin } 
   =render Reply.where(post: post)
   =render 'shared/reply_form', post: post 

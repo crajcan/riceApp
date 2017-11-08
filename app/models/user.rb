@@ -71,18 +71,17 @@ class User < ApplicationRecord
   end
 
   def feed
-    pins = Pin.where('user_id = ? OR user_id = ?', id, 1)#assumes only one admin
-    pinned_post_ids = pins.map{ |p| p.post_id }
-    posts = Post.find pinned_post_ids 
     unfollowing_ids = "SELECT unfollowed_id FROM relationships
                        WHERE  unfollower_id = :user_id"
-    posts + Post.where("user_id NOT IN (#{unfollowing_ids})", user_id: id)
+    admin_pinned_posts +
+    user_pinned_posts + 
+    Post.where("user_id NOT IN (#{unfollowing_ids})", user_id: id)
   end
 
   def profile_feed
     replied_to = "SELECT post_id FROM replies
                   WHERE user_id = :user_id"
-    Post.where("user_id = :user_id OR id IN (#{replied_to})", user_id: id)
+    user_pinned_posts + Post.where("user_id = :user_id OR id IN (#{replied_to})", user_id: id)
   end
 
   def unfollow(other_user)
@@ -103,5 +102,27 @@ class User < ApplicationRecord
       self.activation_token =  User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+
+    def user_pinned_posts
+      user_pins = Pin.where('user_id = ?', id)
+      user_pinned_post_ids = user_pins.map{ |p| p.post_id }
+      posts = Post.find user_pinned_post_ids
+      posts.each do |post|
+        post.user_pinned = true
+        post.title = post.title.to_s +  " (pinned)"
+      end
+      return posts
+    end
+
+    def admin_pinned_posts
+      admin_pins = Pin.where('user_id = ?', 1)#assumes only one admin
+      admin_pinned_post_ids = admin_pins.map{ |p| p.post_id }
+      posts = Post.find admin_pinned_post_ids
+      posts.each do |post|
+        post.admin_pinned = true
+        post.title = post.title.to_s + " (pinned by admin)"
+      end
+      return posts
+    end 
 
 end

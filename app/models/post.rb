@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  attr_accessor :admin_pinned, :user_pinned
+
   belongs_to :user
   has_many :replies, dependent: :destroy 
   has_many :pins, dependent: :destroy
