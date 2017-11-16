@@ -1,2 +1,2 @@
 APP_NAME = "Rice Business Forum"
-DOMAIN = "ricebusinessforum.com"
+DOMAIN = "emba2017.com"
