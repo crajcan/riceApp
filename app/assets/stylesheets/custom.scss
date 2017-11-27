@@ -250,7 +250,8 @@ header {
 /* footer */
 
 footer {
-  height: 150px;
+  height: 250px;
+  width: 100%;
   margin-top: 375px;
   padding-top: 5px;
   padding-left: 8px;
@@ -261,7 +262,7 @@ footer {
   font-size: .66em; 
   a {
     font-size: 1em;
-    margin-right: 5px;
+    margin-right: 20px;
     color: $footer-font;
     text-decoration: none;
   }
