@@ -49,13 +49,13 @@ $(document).on('turbolinks:load',function(){
     var scrolledY = $(window).scrollTop();
     $('.on-device > body').css('background-position', 'center ' + ((scrolledY)) + 'px');
     var docHeight = $(document).height();
-    if ((docHeight - scrolledY) < 1300) {
-      $('.calendar').css({
+    if (((docHeight - scrolledY) < 1300) && (docHeight > 1500)) {
+      $('.column-2 > .calendar').css({
         position: 'absolute',
         top: (docHeight - 1240)
       });
     } else {
-      $('.calendar').css({
+      $('.column-2 > .calendar').css({
         position: 'fixed',
         top: 60
       });
