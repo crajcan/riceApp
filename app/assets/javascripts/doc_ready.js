@@ -48,6 +48,18 @@ $(document).on('turbolinks:load',function(){
   $(window).scroll(function() {
     var scrolledY = $(window).scrollTop();
     $('.on-device > body').css('background-position', 'center ' + ((scrolledY)) + 'px');
+    var docHeight = $(document).height();
+    if ((docHeight - scrolledY) < 1300) {
+      $('.calendar').css({
+        position: 'absolute',
+        top: (docHeight - 1240)
+      });
+    } else {
+      $('.calendar').css({
+        position: 'fixed',
+        top: 60
+      });
+    }
   });
 
   //toggle event/post form

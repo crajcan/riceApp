@@ -1,11 +1,10 @@
-=content_for(:title, "Calendar")
 .mat-card.calendar 
   %h3
-    Calendar of Events
+    Calendar
   -first_day_this_month = Time.parse(Time.now.strftime("%Y-%m-01"))
   -month = first_day_this_month
-  -months = 6
-  -events = events(Time.now, Time.now + months.months)
-  -(1..months).each do |m|
-    =render 'shared/month', :locals => { :month => month, :events => events }
-    -month = month + 1.month
+  -@months
+  -events = events(Time.now, Time.now + @months.length.months)
+  -@months.each do |m|
+    =render 'shared/month', :locals => { :month => month + m.months, :events => events }
+  =will_paginate @months, :param_name => :month,  page_links: false, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

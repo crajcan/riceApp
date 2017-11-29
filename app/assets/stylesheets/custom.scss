@@ -632,6 +632,7 @@ form {
   }
 
   .column-1{
+    margin-bottom: 500px;
     margin-left: 10px;
     margin-right: 10px;
     float: left;
@@ -639,12 +640,15 @@ form {
   }
 
   .column-2{
-    margin-left: 10px;
+    margin-left: 0px;
     display: block;
     float: left;
     width: 35%;
     .calendar{
+      margin-right: 20px;
       padding: 10px;
+      position: fixed;
+      margin-bottom: 500px;
     }
   }
 
@@ -693,6 +697,9 @@ td{
   padding: 2px;
 }
 
+
+
+
 .event-link{
   background-color: red;
   height: 8px;
@@ -702,3 +709,25 @@ td{
   display: inline-block;
   vertical-align: middle;
 }
+
+.tool-tip{
+  display: none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 0;  
+
+  position: absolute;
+  bottom: 130px;
+  left: 52%;
+  margin-left: 0px; 
+}
+
+.event-link:hover .tool-tip{
+  display: inline-block;
+}
+
+
+

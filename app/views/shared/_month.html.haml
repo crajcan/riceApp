@@ -25,4 +25,6 @@
               -event_date = e.event_time.to_date
               -calendar_date = (month + day_of_month.days - 1.day).to_date
               -if event_date === calendar_date
-                =link_to '', e, :class => 'event-link'
+                %a.event-link{ :href => post_path(e) } 
+                  -Time::DATE_FORMATS[:time_only] = "%l:%M %p"
+                  .tool-tip= e.title + ", "+ e.event_time.to_formatted_s(:time_only)
