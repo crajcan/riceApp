@@ -7,4 +7,4 @@
   -events = events(Time.now, Time.now + @months.length.months)
   -@months.each do |m|
     =render 'shared/month', :locals => { :month => month + m.months, :events => events }
-  =will_paginate @months, :param_name => :month,  page_links: false, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'
+  =will_paginate @months, :param_name => :month,  page_links: false, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate calendar-page'
