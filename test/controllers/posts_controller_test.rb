@@ -29,4 +29,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
+  test "should get search" do 
+    get '/search'
+    assert_response :success
+  end
+
 end
