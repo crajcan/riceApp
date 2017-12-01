@@ -18,6 +18,7 @@ gem 'haml'
 gem 'bootstrap-sass'
 gem 'pry'
 gem 'rinku'
+gem 'material_icons'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.13'
