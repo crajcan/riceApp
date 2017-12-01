@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get '/access_codes' =>       'access_codes#new'
   get '/deactivate' =>         'users#deactivate'
   post '/relationships/:id' => 'relationships#create'
-
+  get '/search' =>             'posts#search'
 
 
   resources :users do
