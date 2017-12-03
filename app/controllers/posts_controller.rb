@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :user_logged_in, only: [:create, :destroy, :show] 
+  before_action :user_logged_in, only: [:create, :destroy, :show, :search] 
   before_action :delete_rights,  only: :destroy
 
   def show
@@ -32,6 +32,9 @@ class PostsController < ApplicationController
   end
 
   def search
+    @term = params[:search][:term]
+    @results = Post.where("title LIKE :term OR content LIKE :term", term: "%#{@term}%").paginate(page: params[:page])
+    @reply = Reply.new
   end
 
   private
