@@ -4,8 +4,10 @@
   %span.time_stamp{:style => "display: inline;" }
     %small
       =time_ago_in_words(reply.created_at)
-  %p.content{:style => "display: block;"}
-    =raw Rinku.auto_link(reply.content, mode=:all, link_attr=nil, skip_tags=nil)
+  -term = (defined? locals) ? locals[:term] : nil
+  =render 'shared/content', :locals => { :content => reply.content, :term => term }
+  //%p.content{:style => "display: block;"}
+  //  =raw Rinku.auto_link(reply.content, mode=:all, link_attr=nil, skip_tags=nil)
   =image_tag(reply.picture.url, :class => "picture") if reply.picture?
   -if current_user?(reply.user) || current_user.admin?
     %span

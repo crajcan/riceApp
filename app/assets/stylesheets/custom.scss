@@ -51,6 +51,7 @@ body{
     border-bottom: 1px solid $card-header-border;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    font-weight: 400;
   }
   h4{
     margin-bottom: 5px;
@@ -79,7 +80,18 @@ body{
     margin: 0;
   }
   .content{
+    font-size: 0;
     margin: 5px 0;
+    div{
+      font-size: 16px;
+      display: inline;
+      white-space: pre;
+    }
+    strong{
+      display: inline;
+      font-size: 16px;
+      font-weight: 900;
+    }
   }
   .picture{
     display: block;

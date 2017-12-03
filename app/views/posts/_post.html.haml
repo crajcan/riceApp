@@ -10,8 +10,10 @@
     -Time::DATE_FORMATS[:custom_long_ordinal] = "%B %e, %l:%M %p"
     .event-info= "Where: #{post.event_location}"
     .event-info= "When: #{post.event_time.to_formatted_s(:custom_long_ordinal)}"
-  %p.content{:style => "display: block;"}
-    =raw Rinku.auto_link(post.content, mode=:all, link_attr=nil, skip_tags=nil)
+  -term = (defined? locals) ? locals[:term] : nil
+  =render 'shared/content', :locals => { :content => post.content, :term => term }
+  //%p.content{:style => "display: block;"}
+  //  =raw Rinku.auto_link(post.content, mode=:all, link_attr=nil, skip_tags=nil)
   =image_tag(post.picture.url, :class => "picture") if post.picture?
   -if current_user?(post.user) || current_user.admin?
     %span
@@ -26,5 +28,5 @@
           =render 'posts/pin', :locals => { :post => post }
         -else
           =render 'posts/unpin', :locals => { :pin => pin } 
-  =render Reply.where(post: post)
+  =render Reply.where(post: post), :locals => { :term => term } 
   =render 'shared/reply_form', post: post 
