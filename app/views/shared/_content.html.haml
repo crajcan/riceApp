@@ -5,11 +5,12 @@
     =raw Rinku.auto_link(locals[:content], mode=:all, link_attr=nil, skip_tags=nil)
 -else
   -non_terms = content.split(/#{term}/i)
+  -terms = content.scan(/#{term}/i)
   .content
     -if non_terms.empty?
       %strong=term
     -else
-      -non_terms[0..-2].each do |non_term|
+      -non_terms[0..-2].each_with_index do |non_term, index|
         .non-term=non_term
-        .term=term
+        .term=terms[index]
       .non-term=non_terms[-1]
