@@ -1,5 +1,5 @@
 =content_for(:title, "Search Results")
 .mat-card
-  %span="Showing #{@results.length} results for: \"#{@term}\""
+  %span="Showing #{@results.count} results for: \"#{@term}\""
 =render @results, :locals => { :term => @term }
 =will_paginate @results, inner_window: 2, outer_window: 0, :previous_label => 'Back', :next_label => 'Next', :class => 'paginate'

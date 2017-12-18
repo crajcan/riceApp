@@ -33,7 +33,8 @@ class PostsController < ApplicationController
 
   def search
     @term = params[:search][:term]
-    @results = Post.where("title LIKE :term OR content LIKE :term", term: "%#{@term}%").paginate(page: params[:page])
+    @results = Post.left_outer_joins(:replies).distinct.where("posts.title LIKE :term OR posts.content LIKE :term OR replies.content LIKE :term", 
+                 term: "%#{@term}%").paginate(page: params[:page])
     @reply = Reply.new
   end
 

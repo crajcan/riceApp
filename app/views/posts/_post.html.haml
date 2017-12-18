@@ -12,8 +12,6 @@
     .event-info= "When: #{post.event_time.to_formatted_s(:custom_long_ordinal)}"
   -term = (defined? locals) ? locals[:term] : nil
   =render 'shared/content', :locals => { :content => post.content, :term => term }
-  //%p.content{:style => "display: block;"}
-  //  =raw Rinku.auto_link(post.content, mode=:all, link_attr=nil, skip_tags=nil)
   =image_tag(post.picture.url, :class => "picture") if post.picture?
   -if current_user?(post.user) || current_user.admin?
     %span

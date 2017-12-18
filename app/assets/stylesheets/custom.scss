@@ -62,6 +62,7 @@ body{
   p {
     margin: 20px 0;
     font-size: 0.66em;
+    white-space: pre;
   }
   span{
     font-size: .75em;
@@ -80,17 +81,23 @@ body{
     margin: 0;
   }
   .content{
-    font-size: 0;
     margin: 5px 0;
+    font-size: 0; 
     div{
       font-size: 16px;
       display: inline;
-      white-space: pre;
     }
     strong{
       display: inline;
       font-size: 16px;
       font-weight: 900;
+    }
+    .term{
+      font-weight: 900;
+      white-space: pre-wrap;
+    }
+    .non-term{
+      white-space: pre-wrap;
     }
   }
   .picture{

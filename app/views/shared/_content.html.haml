@@ -1,13 +1,15 @@
 - content = locals[:content]
 - term = locals[:term]
--unless locals[:term]
-  %p.content{:style => "display: block; font-size: 16px;"}
+-if !(term && content.downcase.include?(term.downcase))
+  .content{:style => " font-size: 16px;"}
     =raw Rinku.auto_link(locals[:content], mode=:all, link_attr=nil, skip_tags=nil)
 -else
-  -if content.include?(term)
-    -non_terms = content.split(term)
-    .content
+  -non_terms = content.split(/#{term}/i)
+  .content
+    -if non_terms.empty?
+      %strong=term
+    -else
       -non_terms[0..-2].each do |non_term|
-        %div=non_term
-        %strong=term
-      %div=non_terms[-1]
+        .non-term=non_term
+        .term=term
+      .non-term=non_terms[-1]
